@@ -11,7 +11,7 @@ Repository ini digunakan untuk memenuhi tugas praktikum dari mata kuliah Pemrogr
 
 
 ### Penjelasan ###
-Skedulin adalah Sebuah website berbagi, mencocokan, dan membuat **schecule** agar jadwal pertemuan dan kegiatan antar sesama orang yang lagi sibuk nih dapat dengan mudah, cepat dan gapake harus ketemuan! Di Skedulin orang-orang dapat melihat jadwal kegiatan teman (**added friend**) mereka dan mencocokan jadwal kita sehingga kita bisa buat jadwal yang ga bentrok tentunyaa *yey*. Dalam Skedulin versi advance, terdapat official account dimana ketika kita follow account tersebut, jadwal yang mereka buat secara automatis masuk kedalam jadwal kita sob!! waw keren ga tuh.
+Skedulin adalah Sebuah website berbagi, mencocokan, dan membuat **schecule** agar jadwal pertemuan dan kegiatan antar sesama orang yang lagi sibuk nih dapat dengan mudah, cepat dan gapake harus ketemuan! Di Skedulin orang-orang dapat melihat jadwal kegiatan teman (**added friend**) mereka dan mencocokannya dengan jadwal dirinya sehingga ia bisa buat jadwal bareng yang ga bentrok tentunyaa *yey*. Dalam Skedulin versi advance, terdapat official account dimana ketika kita follow account tersebut, jadwal yang mereka buat secara automatis masuk kedalam jadwal kita sob!! waw keren ga tuh.
 
 ### Fungsi ###
   * Ga ribet bikin jadwal sama orang
