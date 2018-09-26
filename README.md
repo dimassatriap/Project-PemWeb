@@ -15,13 +15,13 @@ Skedulin adalah Sebuah website berbagi, mencocokan, dan membuat **schecule** aga
 
 ### Fungsi ###
   * Ga ribet bikin jadwal sama orang
-  * organisir jadwal antar sesama secara daring
+  * Organisir jadwal antar sesama secara daring
   * Tau Jadwal Badan-badan / orang-orang yang menurut kamu penting
   
 ### Tujuan ###
-Skedulin bertujuan agar proses pencocokan dan pembuatan jadwal ketemuan atau kegiatan sama orang lain tuh menjadi lebih mudah, gausah ribet-ribet harus nanya-nanya ini itu.
+Skedulin bertujuan agar proses pencocokan dan pembuatan jadwal ketemuan atau kegiatan sama orang lain menjadi lebih mudah, tidak perlu ribet-ribet harus bertanya ini itu.
 
 ### Target Pengguna ###
-Target Pengguna Skedulin adalah orang-orang yang lagi *hectic* dan *busy* kaya mahasiswa yang lagi mulai perkuliahan atau *middle aged worker* gitu
+Target Pengguna Skedulin adalah orang-orang yang lagi *hectic* dan *busy* kaya mahasiswa yang lagi mulai perkuliahan atau *middle aged worker*
 
 #### Teknik Informatika 2017 - Universitas Padjadjaran ####
