@@ -1,8 +1,7 @@
-
-
 html,
 body {
     height: 100%;
+    width: 
 }
 
 body {
@@ -13,62 +12,9 @@ body {
 
 .row {
     margin: 0;
-    /*padding: 20px 0 0 20px;*/
-    border: 1px solid black;
 }
-.col-1
-{
-    border: 1px solid black;
-}
-.col-2
-{
-    border: 1px solid black;
-}
-.col-3
-{
-    border: 1px solid black;
-}
-.col-4
-{
-    border: 1px solid black;
-}
-.col-5
-{
-    border: 1px solid black;
-}
-.col-6
-{
-    border: 1px solid black;
-}
-.col-7
-{
-    border: 1px solid black;
-}
-.col-8
-{
-    border: 1px solid black;
-}
-.col-9
-{
-    border: 1px solid black;
-}
-.col-10
-{
-    border: 1px solid black;
-}
-
-.notification-button{
-    padding: 0 0 15px 15px;
-
-}
-
-.profile-pic{
-    padding: 15px 0 0 10px;
-    
-    
-}
-.topbar-judul{
-    padding: 5px 0 0 0;
+.container, .col-1, .col-10, .col-2, .col-8, .row {
+/*    border: 1px solid black; */
 }
 .home {
     
@@ -76,3 +22,61 @@ body {
     height: 100%;
     background-image: url(../img/HomePage/home-bg.png);
 }
+
+.profile-pic-container{
+    padding: 15px 0 0 10px;
+    
+}
+.profile-pic {
+    width: 80%;
+}
+.home-title{
+    padding-top: 5px;
+}
+.notification-button{
+    width: 60%;
+}
+.notif-button-container {
+    text-align : right;
+    padding : 0;
+}
+
+.main-text-container {
+    padding: 20px;
+}
+.main-text {
+    width: 50%;
+}
+
+.home-side-bar1 {
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.home-side-bar {
+    margin: 15px auto;
+    cursor: pointer;
+}
+
+.home-side-bar1:hover, .home-side-bar:hover {
+    border-bottom: 1px solid #551a8b;
+}
+
+.icon-newevent, .icon-myschedule, .icon-personalization {
+    width: 85%;
+    height: 85%;
+}
+
+.icon-friends {
+    width: 60%;
+    height: 60%;
+}
+
+
+
+
+
+
+
+
+
