@@ -224,7 +224,7 @@ body {
 	width: 70%;
 }
 
-.inside-modal input[type=text], input[type=date] {
+.inside-modal input[type=text],.inside-modal  input[type=date], .inside-modal  input[type=password] {
     width: 95%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -279,7 +279,7 @@ input[type=time]{
    margin: 0;
 }
 /*left*/
-input[type=text] {
+.left-container input[type=text], .left-container input[type=password ] {
    width: 105%;
    padding: 12px 20px;
    margin: 8px 0;
