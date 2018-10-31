@@ -198,7 +198,7 @@ body {
 .modal-content {
     background-color: #fefefe;
 	margin: auto;
-    padding: 20px;
+    /* padding: 20px; */
     border: 1px solid #888;
 	width: 75%;
 }
@@ -209,6 +209,7 @@ body {
     text-align: right;
     font-size: 28px;
     font-weight: bold;
+    margin-right: 10px;
 }
 
 .close:hover,
@@ -217,16 +218,13 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
-    
-.inside-modal{
-	/* padding-left: 50px; */
-}
+
 .reg-content{
-	width: 75%;
+	width: 70%;
 }
 
-input[type=text], input[type=date] {
-    width: 105%;
+.inside-modal input[type=text], input[type=date] {
+    width: 95%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -257,4 +255,115 @@ input[type=time]{
 	cursor: pointer;
 	display: inline-block;
 	color: white;
+}
+
+
+/* base grid border*/
+.col-1, .col-8, .col-2, .col-4, .row{
+    /* border: 1px solid black; */
+}
+
+.col-10{
+   border-left: 0.5px solid grey;
+}
+
+.login{
+   width: 100%;
+   height: 100%;
+   background-image: url(../img/LoginPage/Login-bg.png);
+}
+   
+.row{
+   width: 100%;
+   margin: 0;
+}
+/*left*/
+input[type=text] {
+   width: 105%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   box-sizing: border-box;
+   border: none;
+   background-color: #DAD1D1;
+   color: black;
+   border-radius: 10px;
+}
+
+
+.login-text-container{
+   margin-top: 7%;
+   margin-left: 10%;
+   font-size: 30px;
+}
+
+.base-container{
+
+}
+
+.img-icon {
+   margin: auto;
+}
+
+.img-box {
+   display: flex;
+   justify-content: center;
+}
+
+.content-box{
+   margin: 35px 0 0 0; 
+   padding: 0;
+}
+.col-12, .col-md-6 .left-container {
+   padding-right: 0;
+}
+
+.content2-box{
+/*	padding-left: 30%;*/
+   margin-top: 45px;
+}
+
+.content3-box{
+/*	padding-left: 30%;*/
+   text-align: center; 
+}
+
+.button{
+   max-width: 100%;
+   background-color: purple;
+   width: 310px;
+   height: 40px;	
+   text-align: center;
+   cursor: pointer;
+   display: inline-block;
+   color: white;
+}
+
+/*right*/
+.welcome-container{
+   padding-left: 20px;
+   padding-top: 50px;
+}
+.desc-container{
+   padding-left: 20px;
+}
+
+.welcome-text{
+   font-size: 35px;
+}
+
+.btn1{
+	background-color: transparent;
+	border: none;
+	color: palevioletred;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn1:hover{
+    color: purple;
+}
+
+.inside-modal{
+    /* s */
+    padding-bottom: 40px;
 }

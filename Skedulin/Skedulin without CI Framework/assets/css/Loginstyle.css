@@ -121,7 +121,7 @@ input[type=text] {
 .modal-content {
     background-color: #fefefe;
 	margin: auto;
-    padding: 20px;
+    /* padding: 20px; */
     border: 1px solid #888;
 	width: 20%;
 }
@@ -153,7 +153,8 @@ input[type=text] {
 }
 
 .inside-modal{
-	margin-left: 20px;
+    margin-left: 35px;
+    padding-bottom: 40px;
 }
 .reg-content{
 	width: 80%;
