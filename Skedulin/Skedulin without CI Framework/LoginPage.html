@@ -78,10 +78,12 @@
 						</div>
 					<!-- Sign up text -->
 						<div class="content3-box row">
-							<div class=" col-8 col-md-8"> Don't have an account? 
-								<a href="https://www.w3schools.com/css/css3_buttons.asp" target="_blank"> Sign Up!</a>
+							<div class="col-8 col-md-3"> </div>
+							<div class=" col-8 col-md-8"> Don't have an account?
+								<!-- open modal -->
+								<button id="signUp" class="btn1"> Sign Up </button>
 							</div>
-						</div>	
+						</div>	 
 				</div>
 				
 			<!-- right -->
@@ -99,7 +101,50 @@
 					 		</div>
 					 	</div>
 				</div>
-		</div>	
+		</div>
+
+	</div>
+	<!-- the modal -->
+	<div id="myModal" class="modal">
+		<div>
+			<div class="row">
+				<div class=" col-8 col-md-4"> </div>
+				<div class=" col-8 col-md-4">
+					<!-- Modal Content -->
+					<div class="modal-content"> 
+					<!-- close modal -->
+					<span class="close">&times;</span>
+					<div class="inside-modal">
+						<h4> Let's Go Join Our Universe <br> </h4>	
+						<!-- form 1 -->
+						Name : 
+						<form class="reg-content">
+								<input type="text" id="Regn-name" name="reg-nama" placeholder="name">
+						</form>
+
+						Username : 
+						<form class="reg-content">
+								<input type="text" id="Regn-username" name="reg-usernama" placeholder="username">
+						</form>
+
+						Password : 
+						<form class="reg-content">
+								<input type="text" id="Regn-passwd" name="reg-password" placeholder="password">
+						</form>
+
+						<form class="reg-content">
+								<input type="text" id="Regn-repasswd" name="reg-repassword" placeholder="Re-type password">
+						</form>
+
+						<button class="button"> Create! </button> 
+						
+					</div>
+				</div>
+
+				<div class=" col-8 col-md-4"> </div>
+			</div>
+			</div>
+		</div>
 	</div>
 	
 	<!-- JQuery -->
@@ -109,7 +154,32 @@
     <script src="assets/js/custom.js"></script>
 	  
     <!-- wow JS -->
-    <script src="assets/js/wow/wow.min.js"></script>
+	<script src="assets/js/wow/wow.min.js"></script>
+	
+	<!-- modal script  -->
+	<script>
+		// get modal
+		var modal = document.getElementById('myModal');
+		//get open modal
+		var btn = document.getElementById("signUp");
+		//get span element that close
+		var span = document.getElementsByClassName("close")[0];
+		// open modal
+		btn.onclick = function() {
+   			 modal.style.display = "block";
+		}
+		//To close the modal
+		span.onclick = function(){
+			modal.style.display = "none";
+		}
+
+		//click anywhere close moda
+		window.onclick = function(event){
+			if (event.target == modal){
+				modal.style.display = "none";
+			}
+		}
+	</script>
 
 </body>
 </html>
