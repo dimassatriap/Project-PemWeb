@@ -139,9 +139,22 @@ body {
     box-shadow: 6px 8px 8px rgba(138,121,93,0.5);
 }
 
-.event-title-container {
-    background-color: #23A99F;
+.event-title-container1 {
+    background-color: rgb(164, 188, 212);
 }
+
+.event-title-container2 {
+    background-color: rgb(206, 168, 168);
+}
+.event-title-container3 {
+    background-color: rgb(176, 206, 147);
+}
+.event-title-container4 {
+    background-color: #C4C4C4;
+}
+
+
+
 
 .event-title {
     font-size : 20px;
