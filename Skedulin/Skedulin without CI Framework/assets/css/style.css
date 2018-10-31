@@ -35,6 +35,21 @@ body {
     width: 100%;
     height: 100%;
     background-image: url(../img/HomePage/home-bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.friendlist{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/FriendList/Component6.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }
 
 /*--------------------------------------------------------------------------------                                       
@@ -67,7 +82,7 @@ body {
     padding: 0;
 }
 .main-text {
-    width: 55%;
+    width: 50%;
 }
 
 .home-side-container {
