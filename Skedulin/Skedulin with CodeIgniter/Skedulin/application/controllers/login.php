@@ -18,7 +18,7 @@ class Login extends CI_Controller{
 		$where = array(
 			'Person_nama' => $username,
 			'password' => $password
-			);
+		);
 
 		$cek = $this->m_login->cek_login("person",$where)->num_rows();
 		if($cek > 0){
@@ -35,6 +35,18 @@ class Login extends CI_Controller{
 		}else{
 			echo "Username dan password salah !";
 		}
+	}
+
+	function aksi_register(){
+		$reg_nama = $this->input->post('reg-nama');
+		$reg_user = $this->input->post('reg-user');
+		$reg_pass = $this->input->post('reg-pass');
+		$data = array(
+			'Person_nama' => $reg_user,
+			'password' => $reg_pass
+		);
+		$this->m_login->input_data("person",$data);
+		redirect(base_url('index.php/login'));
 	}
  
 	function logout(){

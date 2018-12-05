@@ -95,7 +95,7 @@
 				
 			<!-- right -->
 				<div class=" col-10 col-md-6 wow animated fadeInRight" data-wow-duration="1s" data-wow-delay="2s">
-					 	<!-- Welocome row -->
+					 	<!-- Welcome row -->
 					 	<div class="welcome-container row">
 					 		<div class=" col-8 col-md-6">
 					 			<div class="welcome-text"> <b> Welcome! </b>
@@ -127,26 +127,24 @@
 						<h4> Let's Go Join Our Universe <br> </h4>
 						<!-- form 1 -->
 						Name : 
-						<form class="reg-content">
+						<form action="<?php echo base_url('index.php/login/aksi_register'); ?>" class="reg-content" method="post">
 								<input type="text" id="Regn-name" name="reg-nama" placeholder="name">
-						</form>
+					
 
 						Username : 
-						<form class="reg-content">
-								<input type="text" id="Regn-username" name="reg-usernama" placeholder="username">
-						</form>
+						
+								<input type="text" id="Regn-username" name="reg-user" placeholder="username">
+					
 
 						Password : 
-						<form class="reg-content">
-								<input type="password" id="Regn-passwd" name="reg-password" placeholder="password">
-						</form>
+					
+								<input type="password" id="Regn-passwd" name="reg-pass" placeholder="password">
+						
 
-						<form class="reg-content">
-								<input type="password" id="Regn-repasswd" name="reg-repassword" placeholder="Re-type password">
-						</form>
-
-						<button class="button" > Create! </button> 
+						<!-- input -->
+								<input class = "btn1" type="submit" value=" Join ">
 						</center>
+						</form>
 						
 					</div>
 				</div>
