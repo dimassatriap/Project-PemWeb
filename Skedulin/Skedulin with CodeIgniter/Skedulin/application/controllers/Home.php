@@ -3,6 +3,8 @@ class Home extends CI_Controller{
  
 	function __construct(){
 		parent::__construct();
+		$this->load->model("m_event");
+
 	
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("index.php/login"));
@@ -16,5 +18,16 @@ class Home extends CI_Controller{
 	function MySchedule(){
 		redirect(base_url('index.php/MySchedule'));
 	}
+
+	public function addEvent(){
+		$event = $this->m_event;
+
+		$event->save();
+		$this->session->set_flashdata('success', 'Event disimpan');
+
+		$this->load->view('v_home');
+	}
+
+
 }
 ?>

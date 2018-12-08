@@ -58,7 +58,7 @@
                </div>
                
                <div class="home-side-bar row wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="2.5s">
-                   <img class="icon-personalization" src="<?php echo base_url() ?>assets/img/HomePage/icon-personalization.png" alt="">
+                   <img class="icon-personalization" src="<?php echo base_url() ?>assets/img/HomePage/icon-personalization.png" alt="" id="personalize">
                </div>
            </div>
            
@@ -70,42 +70,82 @@
            
         </div>
     </div>
-    
-    <!-- the modal -->
-	<div id="myModal" class="modal">
-		<div>
-			<div class="row">
-				<div class=" col-8 col-md-3"> </div>
-				<div class=" col-8 col-md-6">
-					<!-- Modal Content -->
-					<div class="modal-content"> 
-					<!-- close modal -->
-					<span class="close">&times;</span>
-					<div class="inside-modal">
+
+
+  <!-- modal for Add New Event -->
+	 <!-- the modal -->
+  <div id="myModal" class="modal">
+    <div>
+      <div class="row">
+        <div class=" col-8 col-md-3"> </div>
+        <div class=" col-8 col-md-6">
+          <!-- Modal Content -->
+          <div class="modal-content"> 
+          <!-- close modal -->
+          <span class="close">&times;</span>
+          <div class="inside-modal">
                         <center>
-						<h4> Create Your Schedule <br> </h4>	
-						<!-- form 1 -->
-						
-						<form class="reg-content">
+            <h4> Create Your Schedule <br> </h4>  
+            <!-- form 1 -->
+            
+            <form class="reg-content" method="post" action="<?php echo base_url('index.php/Home/addEvent'); ?>" >
+                        <p>Event : </p> <input type="text"  name="Event_nama" placeholder="Name Of Event">
+                        <p>Date :</p> <input type="date" name="Event_tanggal" placeholder="Date">
+                        <div class="">
+                        <p>Time : </p>  <input type="time" name="Event_start" placeholder="Start"> To 
+                        <input type="time" name="Event_stop" placeholder="stop">
+                        </div>
+
+                        <input type="submit" class="button" value="Create!">
+            </form>
+            <!-- <button class="button"> Create! </button>  -->
+            </center>
+                    </div>
+                
+        </div>
+
+        <div class=" col-8 col-md-3"> </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- the modal for edit profile -->
+  <div id="myModal" class="modal">
+    <div>
+      <div class="row">
+        <div class=" col-8 col-md-3"> </div>
+        <div class=" col-8 col-md-6">
+          <!-- Modal Content -->
+          <div class="modal-content"> 
+          <!-- close modal -->
+          <span class="close">&times;</span>
+          <div class="inside-modal">
+                        <center>
+            <h4> Create Your Schedule <br> </h4>  
+            <!-- form 1 -->
+            
+            <form class="reg-content" method="post">
                         <p>Event : </p> <input type="text"  name="event" placeholder="Name Of Event">
                         <p>Date :</p> <input type="date" name="event-date" placeholder="Date">
                         <div class="">
                         <p>Time : </p>  <input type="time" name="event-start" placeholder="Start"> To 
                         <input type="time" name="event-start" placeholder="stop">
                         </div>
-						</form>
-						<button class="button"> Create! </button> 
-						</center>
+            </form>
+          <!--  <button class="button"> Create! </button>  -->
+            </center>
                     </div>
                 
-				</div>
+        </div>
 
-				<div class=" col-8 col-md-3"> </div>
-			</div>
-			</div>
-		</div>
-	</div>
-	
+        <div class=" col-8 col-md-3"> </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
 	<!-- JQuery -->
     <script src="<?php echo base_url() ?>assets/js/jquery.js"></script>
     
@@ -124,12 +164,16 @@
 		var modal = document.getElementById('myModal');
 		//get open modal
 		var btn = document.getElementById("newEvent");
+    var btn2 = document.getElementById("personalize");
 		//get span element that close
 		var span = document.getElementsByClassName("close")[0];
 		// open modal
 		btn.onclick = function() {
    			 modal.style.display = "block";
 		}
+    btn2.onclick = function() {
+         modal.style.display = "block";
+    }
 		//To close the modal
 		span.onclick = function(){
 			modal.style.display = "none";
