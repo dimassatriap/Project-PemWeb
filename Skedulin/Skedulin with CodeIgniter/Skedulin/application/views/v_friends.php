@@ -2,16 +2,13 @@
 // Create connection
 $conn = new mysqli('localhost','root','', 'skedulindb');
 
-if ($conn->connect_error) {
-    $username = $this->session->userdata("name");
-            die("Connection failed: " . $conn->connect_error);
-            $post_display = mysqli_real_escape_string($conn, $_POST['displayname']);}
-            $query = "SELECT * FROM person WHERE Person_nama='displaytest'";
+
+            $username = $this->session->userdata("name");
+            $query = "SELECT * FROM person WHERE Person_nama='$username'";
             $result = mysqli_query($conn, $query);
         $row = mysqli_fetch_array($result);
         $display = $row['displayname'];
             ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
