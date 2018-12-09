@@ -13,11 +13,21 @@ class Login extends CI_Controller{
 	}
  
 	function aksi_login(){
+		// Create connection
+		$conn = new mysqli('localhost','root','', 'skedulindb');
+		// Check connection
+		if ($conn->connect_error) {
+    		die("Connection failed: " . $conn->connect_error);
+    		$post_display = mysqli_real_escape_string($conn, $_POST['displayname']);}
 		$username = $this->input->post('name');
 		$password = $this->input->post('password');
+		$query = "SELECT * FROM person WHERE Person_nama='$username'";
+		$row = mysqli_fetch_array($query);
+		$rec = $row['displayname'];
+
 		$where = array(
 			'Person_nama' => $username,
-			'password' => $password
+			'password' => $password,
 		);
 
 		$cek = $this->m_login->cek_login("person",$where)->num_rows();
@@ -25,7 +35,8 @@ class Login extends CI_Controller{
  
 			$data_session = array(
 				'name' => $username,
-				'status' => "login"
+				'status' => "login",
+				'display' => $rec
 				);
  
 			$this->session->set_userdata($data_session);
@@ -43,9 +54,10 @@ class Login extends CI_Controller{
 		$reg_pass = $this->input->post('reg-pass');
 		$data = array(
 			'Person_nama' => $reg_user,
-			'password' => $reg_pass
+			'password' => $reg_pass,
+			'displayname'=> $reg_nama
 		);
-		$this->m_login->input_data("person",$data);
+				$this->m_login->input_data("person",$data);
 		redirect(base_url('index.php/login'));
 	}
  

@@ -1,3 +1,17 @@
+<?php
+// Create connection
+$conn = new mysqli('localhost','root','', 'skedulindb');
+
+if ($conn->connect_error) {
+    $username = $this->session->userdata("name");
+            die("Connection failed: " . $conn->connect_error);
+            $post_display = mysqli_real_escape_string($conn, $_POST['displayname']);}
+            $query = "SELECT * FROM person WHERE Person_nama='displaytest'";
+            $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_array($result);
+        $display = $row['displayname'];
+            ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,17 +41,17 @@
             <div  class="profile-pic-container col-2 col-sm-1 wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="1s" style="border-style: solid;border-color: transparent;" onclick="openHome() ">
                 <img class="profile-pic " src="<?php echo base_url() ?>assets/img/HomePage/Component%204.png" alt="">
             </div>
-            <div class="name-container col-1">
-              <h5 style="font-size: 35px;"class="wow animated fadeIn"><?php echo $this->session->userdata("username");?></h5>
+            <div class="name-container col-2">
+              <h5 style="font-size: 35px;"class="wow animated fadeIn"><?php echo $display;?></h5>
               <a class="wow animated fadeIn"href="<?php echo base_url('index.php/login/logout'); ?>"style="color:rgb(169,169,169)";>Logout</a>
             </div>
-            <div class="col-7 col-sm-9 text-center" style="border-style: solid;border-color: transparent;padding-right: 170px">
+            <div style="position: absolute; top: 8%;left: 50%;transform: translate(-50%,-50%); border-style: solid;border-color: transparent;" class="col-5 col-sm-7 text-center wow animated fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Logo.png" alt="">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Header.png" alt="">
                 <br><br>
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/FriendList/Friend List.png" alt="">
             </div>
-            <div class="notif-button-container col-2 col-sm-1 wow animated fadeInRight" data-wow-duration="1s" data-wow-delay="1s" style="border-style: solid;border-color: transparent;">
+            <div style="position: absolute; top: 0%;left:91.5%;transform: translate(-50%,-50%);border-style: solid;border-color: transparent;"class="notif-button-container col-2 col-sm-1 wow animated fadeInRight" data-wow-duration="1s" data-wow-delay="1s">
               <img class="notification-button" src="<?php echo base_url() ?>assets/img/HomePage/Component%203.png" alt="">
           </div>
           <div class="home-inner row justify-content-center" style="border-style: solid; border-color: transparent;">
