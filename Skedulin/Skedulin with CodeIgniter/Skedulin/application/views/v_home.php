@@ -28,8 +28,8 @@
                 <img class="profile-pic " src="<?php echo base_url() ?>assets/img/HomePage/Component%204.png" alt="">
             </div>
             <div class="name-container col-1">
-            	<h5><?php echo $this->session->userdata("name");?></h5>
-            	<a href="<?php echo base_url('index.php/login/logout'); ?>">Logout</a>
+            	<h5 style="font-size: 35px;"><?php echo $this->session->userdata("username");?></h5>
+            	<a href="<?php echo base_url('index.php/login/logout'); ?>" style="color:rgb(169,169,169);" >Logout</a>
             </div>
 	        <div class="col-6 col-sm-8 text-center">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Logo.png" alt="">

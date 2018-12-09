@@ -28,8 +28,8 @@
                 <img class="profile-pic " src="<?php echo base_url() ?>assets/img/HomePage/Component%204.png" alt="" onclick="openHome()">
             </div>
             <div class="name-container col-1 wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-                <h5><?php echo $this->session->userdata("name");?></h5>
-                <a href="<?php echo base_url('index.php/login/logout'); ?>">Logout</a>
+                <h5 style="font-size: 35px;>"<?php echo $this->session->userdata("username");?></h5>
+                <a href="<?php echo base_url('index.php/login/logout'); ?>"style="color:rgb(169,169,169)">Logout</a>
             </div>
 	        <div class="col-6 col-sm-8 text-center wow animated zoomIn" data-wow-duration="1s" data-wow-delay=".5s">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Logo.png" alt="">
