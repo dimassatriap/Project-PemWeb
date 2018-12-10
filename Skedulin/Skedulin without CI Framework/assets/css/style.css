@@ -85,6 +85,10 @@ body {
     width: 50%;
 }
 
+.home-inner {
+  margin-top: 30px;
+}
+
 .home-side-container {
     padding: 0;
     padding-left: 15px;
