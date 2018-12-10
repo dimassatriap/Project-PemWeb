@@ -15,8 +15,7 @@ class m_event extends CI_Model
 	public $Event_start;
 	public $Event_stop;
 
-	public function save()
-	{
+	public function save(){
 		$post = $this->input->post();
 		$this->Event_id = uniqid();
 		$this->Event_nama = $post["Event_nama"];

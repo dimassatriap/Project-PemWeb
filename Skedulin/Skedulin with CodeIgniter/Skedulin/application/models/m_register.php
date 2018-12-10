@@ -11,7 +11,7 @@ class m_register extends CI_Model
 	//attribute person
 	public $Person_id;
 	public $Person_nama;
-	public $person_status;
+	public $Person_status;
 	public $password;
 	public $displayname;
 

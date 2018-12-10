@@ -5,11 +5,12 @@ class Login extends CI_Controller{
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('m_login');
+		$this->load->model("m_register");
 		$this->load->library('form_validation');
  
 	}
  
-	function index(){
+	function index(){	
 		$this->load->view('v_login');	
 	}
  
