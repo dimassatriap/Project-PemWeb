@@ -70,6 +70,10 @@ body {
     width: 55%;
 }
 
+.home-inner {
+  margin-top: 30px;
+}
+
 .home-side-container {
     padding: 0;
     padding-left: 10px;
