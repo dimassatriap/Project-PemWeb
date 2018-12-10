@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +42,8 @@
 				<div class="col-12 col-md-6 left-container wow animated slideInLeft" data-wow-duration="1s" data-wow-delay="1s"> 
 				
 					<!-- username row -->
-					<form action="<?php echo base_url('index.php/login/aksi_login'); ?>" method="post">
+					<?php echo validation_errors(); ?>
+					<?php echo form_open('login/aksi_login') ?>
 						<div class="content-box row">
 						<div class="col-2 col-md-4 col-sm-3"> </div>
 							<div class="img-box col-2 col-sm-1">
@@ -126,8 +126,10 @@
 						<center>
 						<h4> Let's Go Join Our Universe <br> </h4>
 						<!-- form 1 -->
+						
+					<?php echo validation_errors(); ?>
+					<?php echo form_open('register/addUser') ?>
 						Name : 
-						<form action="<?php echo base_url('index.php/login/aksi_register'); ?>" class="reg-content" method="post">
 								<input type="text" id="Regn-name" name="reg-nama" placeholder="name">
 					
 

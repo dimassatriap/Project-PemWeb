@@ -41,7 +41,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
             </div>
             <div class="name-container col-2 wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
 
-                <h5 style="font-size: 35px;"><?php echo $display;?></h5>
+                <h5 style="font-size: 30px;"><?php echo $display;?></h5>
                 <a href="<?php echo base_url('index.php/login/logout'); ?>"style="color:rgb(169,169,169)">Logout</a>
             </div>
 	        <div style="position: absolute; top: 7%;left: 50%;transform: translate(-50%,-50%);" class="col-5 col-sm-7 text-center wow animated fadeIn" data-wow-duration="1s" data-wow-delay=".5s">

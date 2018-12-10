@@ -9,16 +9,17 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
         $row = mysqli_fetch_array($result);
         $display = $row['displayname'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, intial-scale=1">
-  
-  <title>Skedulin</title>
-  
-  <!-- icon on title -->
+	
+	<title>Skedulin</title>
+	
+	<!-- icon on title -->
     <link rel="shorcut icon" href="<?php echo base_url() ?>assets/img/HomePage/Logo.png">
     
     <!-- google fonts -->
@@ -32,49 +33,67 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/animate/animate.css">
 </head>        
 <body>
-  
-  <div class="home">
-      <div class="row">
+	
+	<div class="home">
+	    <div class="row">
             <div class="profile-pic-container col-2 col-sm-1">
                 <img class="profile-pic " src="<?php echo base_url() ?>assets/img/HomePage/Component%204.png" alt="">
             </div>
             <div class="name-container col-1">
-              <h5><?php echo $display;?></h5>
-              <a href="<?php echo base_url('index.php/login/logout'); ?>">Logout</a>
+            	<h5><?php echo $display;?></h5>
+            	<a href="<?php echo base_url('index.php/login/logout'); ?>">Logout</a>
             </div>
-          <div class="col-6 col-sm-8 text-center">
+	        <div class="col-6 col-sm-8 text-center">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Logo.png" alt="">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Header.png" alt="">
             </div>
             <div class="col-1"></div>
             <div class="notif-button-container col-2 col-sm-1">
-              <img class="notification-button" src="<?php echo base_url() ?>assets/img/HomePage/Component%203.png" alt="">
-          </div>
-     </div>
-     
+	            <img class="notification-button" src="<?php echo base_url() ?>assets/img/HomePage/Component%203.png" alt="">
+	        </div>
+	   </div>
+	   
         <div class="home-inner row justify-content-center">
           
            <div class="home-side-container col-7 col-md-2 col-sm-3">
               
-               <div class="home-side-bar1 row wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="1.3s">
+               <div class="home-side-bar1 row wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                    <img class="icon-newevent" src="<?php echo base_url() ?>assets/img/HomePage/icon-newevent.png" alt="" id="newEvent" >
                </div>
                
-               <div class="home-side-bar row wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="1.7s">
+               <div class="home-side-bar row wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="1.3s">
                    <img class="icon-friends" src="<?php echo base_url() ?>assets/img/HomePage/icon-friends.png" alt="" onclick="openFriends()">
                </div>
                
-               <div class="home-side-bar row wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="2.1s">
+               <div class="home-side-bar row wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="1.7s">
                    <img class="icon-myschedule" src="<?php echo base_url() ?>assets/img/HomePage/icon-myschedule.png" alt="" onclick="openMySchedule()">
-               </div>
-               
-               <div class="home-side-bar row wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="2.5s">
-                   <img class="icon-personalization" src="<?php echo base_url() ?>assets/img/HomePage/icon-personalization.png" alt="" onclick = "openOption()">
                </div>
            </div>
            
            <div class="main-text-container text-center col-12 col-md-8 col-sm-6">
-               <img width="100%" height="100%" class="main-text" src="<?php echo base_url() ?>assets/img/HomePage/Main-Text.png" alt="">
+           
+            <form action="<?php echo base_url('index.php/login/aksi_register'); ?>" class="reg-content" method="post">
+              <input type="hidden" name="id" value="<?php echo $where['Person_nama'] ?>">
+            Name : 
+
+                <input type="text" id="Regn-name" name="reg-nama" placeholder="name" value="<?php echo $where['Person_nama'] ?>"> <br>
+          
+
+            Username : 
+            
+                <input type="text" id="Regn-username" name="reg-user" placeholder="username"  value="<?php echo $where['Person_nama']?>"> <br>
+          
+
+            Password : 
+          
+                <input type="password" id="Regn-passwd" name="reg-pass" placeholder="password" value="<?php echo $where['Person_nama'] ?>"> <br>
+            
+
+            <!-- input -->
+                <input class = "btn1" type="submit" value=" Edit ">
+            </center>
+            </form>
+         
            </div>
            
            <div class="col-8 col-md-2 col-sm-3"></div>
@@ -84,7 +103,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
 
 
   <!-- modal for Add New Event -->
-   <!-- the modal -->
+	 <!-- the modal -->
   <div id="myModal" class="modal">
     <div>
       <div class="row">
@@ -121,7 +140,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
     </div>
   </div>
 
-  <!-- JQuery -->
+	<!-- JQuery -->
     <script src="<?php echo base_url() ?>assets/js/jquery.js"></script>
     
     <!-- bootstrap JS -->
@@ -134,28 +153,28 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
     <script type="text/javascript" src="<?php echo base_url() ?>assets/js/custom.js"></script>
 
     <!-- modal script  -->
-  <script>
-    // get modal
-    var modal = document.getElementById('myModal');
-    //get open modal
-    var btn = document.getElementById("newEvent");
-    //get span element that close
-    var span = document.getElementsByClassName("close")[0];
-    // open modal
-    btn.onclick = function() {
-         modal.style.display = "block";
-    }
-    //To close the modal
-    span.onclick = function(){
-      modal.style.display = "none";
-    }
+	<script>
+		// get modal
+		var modal = document.getElementById('myModal');
+		//get open modal
+		var btn = document.getElementById("newEvent");
+		//get span element that close
+		var span = document.getElementsByClassName("close")[0];
+		// open modal
+		btn.onclick = function() {
+   			 modal.style.display = "block";
+		}
+		//To close the modal
+		span.onclick = function(){
+			modal.style.display = "none";
+		}
 
-    //click anywhere close moda
-    window.onclick = function(event){
-      if (event.target == modal){
-        modal.style.display = "none";
-      }
-    }
+		//click anywhere close moda
+		window.onclick = function(event){
+			if (event.target == modal){
+				modal.style.display = "none";
+			}
+		}
 
     //Open Myschedule Page
     function openMySchedule(){
@@ -166,12 +185,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
     function openFriends(){
       window.location.href = "<?php echo base_url('index.php/Friends'); ?>";
     }
-
-    //Oper Option
-    function openOption(){
-      window.location.href = "<?php echo base_url('index.php/Options'); ?>";
-    }
-  </script>
+	</script>
 
 </body>
 </html>

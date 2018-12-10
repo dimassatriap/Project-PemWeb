@@ -8,6 +8,7 @@ class m_event extends CI_Model
 	
 	private $table = "event";
 
+	//attribute event
 	public $Event_id;
 	public $Event_nama;
 	public $Event_tanggal;
@@ -25,5 +26,6 @@ class m_event extends CI_Model
 
 		$this->db->insert($this->table, $this); 
 	}
+
 }
  ?>
