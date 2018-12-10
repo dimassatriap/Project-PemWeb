@@ -4,7 +4,7 @@ class Register extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model("m_register");
-
+		$this->load->library('form_validation');
 	
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("index.php/login"));
@@ -12,25 +12,16 @@ class Register extends CI_Controller{
 	}
 
 	function index(){
-		$this->load->helper(array('form'));
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('reg-nama','Name','required');
-		$this->form_validation->set_rules('reg-user','Username','required');
-		$this->form_validation->set_rules('reg-pass','Password','required');
-
-		if ($this->form_validation->run() == false ){
-			$this->load->helper('url');
-			$this->load->view('v_login');
-		}
+		$this->load->view('v_login');
 	}
 
-	function addUser(){
-		$event = $this->m_register;
+	public function addUser(){
+		$user = $this->m_register;
 		
-		$event->addperson();
-		$this->session->set_flashdata('success', 'Event disimpan');
+		$user->addperson();	
+		$this->session->set_flashdata('success', 'User disimpan');
 
-		redirect(base_url('index.php/login'));	
+		$this->load->view('v_login');
 	}
 }
 

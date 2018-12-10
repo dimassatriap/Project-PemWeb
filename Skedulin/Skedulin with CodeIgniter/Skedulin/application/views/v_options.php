@@ -72,7 +72,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
            
            <div class="main-text-container text-center col-12 col-md-8 col-sm-6">
            
-            <form action="<?php echo base_url('index.php/login/aksi_register'); ?>" class="reg-content" method="post">
+            <form action="<?php echo base_url('index.php/register/addUser'); ?>" class="reg-content" method="post">
               <input type="hidden" name="id" value="<?php echo $where['Person_nama'] ?>">
             Name : 
 

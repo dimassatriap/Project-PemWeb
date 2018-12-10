@@ -127,20 +127,19 @@
 						<h4> Let's Go Join Our Universe <br> </h4>
 						<!-- form 1 -->
 						
-					<?php echo validation_errors(); ?>
-					<?php echo form_open('register/addUser') ?>
+					<form  method="post" action="<?php echo base_url('index.php/Register/addUser'); ?>" >
 						Name : 
-								<input type="text" id="Regn-name" name="reg-nama" placeholder="name">
+								<input type="text" name="displayname" placeholder="name">
 					
 
 						Username : 
 						
-								<input type="text" id="Regn-username" name="reg-user" placeholder="username">
+								<input type="text"  name="Person_nama" placeholder="username">
 					
 
 						Password : 
 					
-								<input type="password" id="Regn-passwd" name="reg-pass" placeholder="password">
+								<input type="password"  name="password" placeholder="password">
 						
 
 						<!-- input -->

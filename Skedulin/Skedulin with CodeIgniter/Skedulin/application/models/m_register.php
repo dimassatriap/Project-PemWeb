@@ -17,9 +17,9 @@ class m_register extends CI_Model
 
 	public function addperson(){
 		$post = $this->input->post();
-		$this->displayname = $post["reg-nama"];
-		$this->Person_nama = $post["reg-user"];
-		$this->password = $post["reg-pass"];
+		$this->displayname = $post["displayname"];
+		$this->Person_nama = $post["Person_nama"];
+		$this->password = $post["password"];
 
 		$this->db->insert($this->table2, $this);
 	}
