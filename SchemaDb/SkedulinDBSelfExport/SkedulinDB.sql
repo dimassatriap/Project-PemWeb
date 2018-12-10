@@ -1,107 +1,129 @@
-CREATE DATABASE  IF NOT EXISTS `SkedulinDB` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `SkedulinDB`;
--- MySQL dump 10.13  Distrib 5.7.23, for Linux (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: SkedulinDB
--- ------------------------------------------------------
--- Server version	5.7.23
+-- Host: 127.0.0.1
+-- Generation Time: Dec 09, 2018 at 01:43 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `Event_Id`
+-- Database: `skedulindb`
 --
 
-DROP TABLE IF EXISTS `Event_Id`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Event_Id` (
-  `Event_Id` int(10) NOT NULL AUTO_INCREMENT,
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event`
+--
+
+CREATE TABLE `event` (
+  `Event_id` varchar(25) NOT NULL,
   `Event_nama` varchar(250) DEFAULT NULL,
-  `Event_tanggal` varchar(250) DEFAULT NULL,
-  `Event_start` varchar(250) DEFAULT NULL,
-  `Event_stop` varchar(250) DEFAULT NULL,
-  PRIMARY KEY (`Event_Id`)
+  `Event_tanggal` date DEFAULT NULL,
+  `Event_start` time DEFAULT NULL,
+  `Event_stop` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Event_Id`
+-- Dumping data for table `event`
 --
 
-LOCK TABLES `Event_Id` WRITE;
-/*!40000 ALTER TABLE `Event_Id` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Event_Id` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `event` (`Event_id`, `Event_nama`, `Event_tanggal`, `Event_start`, `Event_stop`) VALUES
+('5', 'Rapat Pimpinan I', '2018-12-04', NULL, NULL),
+('5c07629ca5f05', 'Rapat Pimpinan I', '0000-00-00', '00:00:00', '00:00:00'),
+('5c07635fba078', 'Rapat Pimpinan I', '0000-00-00', '00:00:00', '00:00:00'),
+('5c07638432213', 'Rapat Pimpinan II', '2018-12-10', '01:00:00', '12:00:00');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `Jadwal`
+-- Table structure for table `jadwal`
 --
 
-DROP TABLE IF EXISTS `Jadwal`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Jadwal` (
+CREATE TABLE `jadwal` (
   `Jadwal_Id` date DEFAULT NULL,
   `Person_Id` int(10) DEFAULT NULL,
-  `Event_Id` int(10) DEFAULT NULL,
-  KEY `Person_Id` (`Person_Id`),
-  KEY `Event_Id` (`Event_Id`),
-  CONSTRAINT `Jadwal_ibfk_1` FOREIGN KEY (`Person_Id`) REFERENCES `Person` (`Person_Id`),
-  CONSTRAINT `Jadwal_ibfk_2` FOREIGN KEY (`Event_Id`) REFERENCES `Event_Id` (`Event_Id`)
+  `Event_id` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `Jadwal`
+-- Table structure for table `person`
 --
 
-LOCK TABLES `Jadwal` WRITE;
-/*!40000 ALTER TABLE `Jadwal` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Jadwal` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Person`
---
-
-DROP TABLE IF EXISTS `Person`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Person` (
-  `Person_Id` int(10) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `person` (
+  `Person_Id` int(10) NOT NULL,
   `Person_nama` varchar(250) DEFAULT NULL,
   `Person_status` varchar(250) DEFAULT NULL,
-  PRIMARY KEY (`Person_Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14002 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `password` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `Person`
+-- Dumping data for table `person`
 --
 
-LOCK TABLES `Person` WRITE;
-/*!40000 ALTER TABLE `Person` DISABLE KEYS */;
-INSERT INTO `Person` VALUES (14001,'Risyad Pangestu','Student');
-/*!40000 ALTER TABLE `Person` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `person` (`Person_Id`, `Person_nama`, `Person_status`, `password`) VALUES
+(17007, 'Dimas Satria', 'Mhs', 'tole'),
+(17015, 'Dimas Satria Prakoso', NULL, 'tole');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `event`
+--
+ALTER TABLE `event`
+  ADD PRIMARY KEY (`Event_id`);
+
+--
+-- Indexes for table `jadwal`
+--
+ALTER TABLE `jadwal`
+  ADD KEY `Person_Id` (`Person_Id`),
+  ADD KEY `Event_id` (`Event_id`);
+
+--
+-- Indexes for table `person`
+--
+ALTER TABLE `person`
+  ADD PRIMARY KEY (`Person_Id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `person`
+--
+ALTER TABLE `person`
+  MODIFY `Person_Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17016;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `jadwal`
+--
+ALTER TABLE `jadwal`
+  ADD CONSTRAINT `Jadwal_ibfk_1` FOREIGN KEY (`Person_Id`) REFERENCES `person` (`Person_Id`),
+  ADD CONSTRAINT `Jadwal_ibfk_2` FOREIGN KEY (`Event_id`) REFERENCES `event` (`Event_id`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2018-10-06  7:50:09
