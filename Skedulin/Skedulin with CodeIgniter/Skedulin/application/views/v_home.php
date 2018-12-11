@@ -119,6 +119,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
       </div>
       </div>
     </div>
+
   </div>
 
   <!-- JQuery -->
@@ -135,6 +136,8 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
 
     <!-- modal script  -->
   <script>
+
+
     // get modal
     var modal = document.getElementById('myModal');
     //get open modal

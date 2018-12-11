@@ -27,6 +27,9 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
     
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap/bootstrap.min.css">
+
+    <!-- Custom fonts for this template-->
+    <link href="<?php echo base_url('assets/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
     
     <!-- style CSS -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
@@ -35,53 +38,56 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
 <body>
 	
 	<div class="schedule">
-	    <div class="row">
-            <div class="profile-pic-container col-2 col-sm-1 wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+        <div class="row">
+            <div class="profile-pic-container col-2 col-sm-1">
                 <img class="profile-pic " src="<?php echo base_url() ?>assets/img/HomePage/Component%204.png" alt="" onclick="openHome()">
             </div>
-            <div class="name-container col-2 wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-
-                <h5 style="font-size: 30px;"><?php echo $display;?></h5>
-                <a href="<?php echo base_url('index.php/login/logout'); ?>"style="color:rgb(169,169,169)">Logout</a>
+            <div class="name-container col-1">
+              <h5><?php echo $display;?></h5>
+              <a href="<?php echo base_url('index.php/login/logout'); ?>">Logout</a>
             </div>
-	        <div style="position: absolute; top: 7%;left: 50%;transform: translate(-50%,-50%);" class="col-5 col-sm-7 text-center wow animated fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+          <div class="col-6 col-sm-8 text-center">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Logo.png" alt="">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Header.png" alt="">
-                <br><br>
-                <!-- <div>   
-                    <img class="schedule-logo img-fluid"src="assets/img/MySchedule/schedule-logo.png" alt="">
-                    <span class="schedule-title ">My Schedule</span>
-                </div> -->
-                <img class="schedule-title img-fluid" src="<?php echo base_url() ?>assets/img/MySchedule/mySchedule-title.png" alt="">
             </div>
             <div class="col-1"></div>
-            <div style="position: absolute; top: 4%;left:96%;transform: translate(-50%,-50%);" class="notif-button-container col-2 col-sm-1">
-	            <img class="notification-button" src="<?php echo base_url() ?>assets/img/HomePage/Component%203.png" alt="">
-	        </div>
-	   </div>
+            <div class="notif-button-container col-2 col-sm-1">
+              <img class="notification-button" src="<?php echo base_url() ?>assets/img/HomePage/Component%203.png" alt="">
+          </div>
+     </div>
 	   
+        <div class="row">
+            <div class="col-12 text-center">
+                        <img class="schedule-title img-fluid" src="<?php echo base_url() ?>assets/img/MySchedule/mySchedule-title.png" alt="">
+            </div>
+        </div>
+
         <div class="add-event-container">
             <div class="row">
                 <div class="col-12 col-l-3 col-md-6 col-sm-6 add-event">    
-                    <img class="add-logo img-fluid" src="<?php echo base_url() ?>assets/img/MySchedule/add.png" alt="">
-                    <img class="add-text img-fluid" src="<?php echo base_url() ?>assets/img/MySchedule/Add%20Event.png" alt="">
+                    <img class="add-logo img-fluid" src="<?php echo base_url() ?>assets/img/MySchedule/add.png" alt="" id="newEvent">
+                    <img class="add-text img-fluid" src="<?php echo base_url() ?>assets/img/MySchedule/Add%20Event.png" alt="" id="newEvent2">
                 </div>
             </div>
             
             <div class="all-event-container">
                 <div class="row event-container-row">
-                   
-                   <!--               EVENT 1             -->
+                    
+                                <?php $i = 5; ?>
+
+                    <?php foreach ($events as $event): ?> 
+
+                    <!--               EVENT 1             -->
                     <div class="col-6 col-md-3 col-sm-4 event-container-box">
                        
                         
                         <div class="event-container">
                             <div class="row event-title-container1">
-                                <span class="event-title">Rapat Panti</span>
+                                <span class="event-title"> <?php echo $event->Event_nama ?> </span>
                             </div>
                             <div class="row event-content justify-content-center">
-                                <div class="col-12 text-center event-tanggal">10 Oktober 2018</div>
-                                <div class="col-12 text-center event-jam">18.00 - 21.00</div>
+                                <div class="col-12 text-center event-tanggal"> <?php echo $event->Event_tanggal ?> </div>
+                                <div class="col-12 text-center event-jam"> <?php echo $event->Event_start ?> - <?php echo $event->Event_stop ?> </div>
                                 <div class="row person-nama-container">
                                        <table class="table-person-nama">
                                             <tbody>
@@ -95,189 +101,223 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
                                            </tbody>
                                         </table>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!--               EVENT 2             -->
-                    <div class="col-6 col-md-3 col-sm-4 event-container-box">
-                       
-                        
-                        <div class="event-container">
-                            <div class="row event-title-container3">
-                                <span class="event-title">Rapat Panti</span>
-                            </div>
-                            <div class="row event-content justify-content-center">
-                                <div class="col-12 text-center event-tanggal">10 Oktober 2018</div>
-                                <div class="col-12 text-center event-jam">18.00 - 21.00</div>
-                                <div class="row person-nama-container">
-                                       <table class="table-person-nama">
-                                            <tbody>
-                                                <tr>
-                                                    <td> Dimas </td>
-                                                    <td> Risyad </td>
-                                                    <td> Harris </td>
-                                                    <td> Putratama </td>
-                                                    <td> Satria </td>
-                                                </tr>
-                                           </tbody>
-                                        </table>
+                                <div class="row">
+                                    <div class="col 12 text-center">
+                                        <a id="changeEvent<?php echo $i ?>" class=" btn btn-small"><i class=" fas fa-edit"></i> Edit</a>
+                                        <a href="<?php echo site_url('MySchedule/delete/'.$event->Event_id) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus<?php echo $i ?></a>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <!--               EVENT 3             -->
-                    <div class="col-6 col-md-3 col-sm-4 event-container-box">
-                       
-                        
-                        <div class="event-container">
-                            <div class="row event-title-container2">
-                                <span class="event-title">Rapat Panti</span>
-                            </div>
-                            <div class="row event-content justify-content-center">
-                                <div class="col-12 text-center event-tanggal">10 Oktober 2018</div>
-                                <div class="col-12 text-center event-jam">18.00 - 21.00</div>
-                                <div class="row person-nama-container">
-                                       <table class="table-person-nama">
-                                            <tbody>
-                                                <tr>
-                                                    <td> Dimas </td>
-                                                    <td> Risyad </td>
-                                                    <td> Harris </td>
-                                                    <td> Putratama </td>
-                                                    <td> Satria </td>
-                                                </tr>
-                                           </tbody>
-                                        </table>
+                                
+                                <!-- modal for Edit Event -->
+                                   <!-- the modal -->
+                                  <div id="myModal<?php echo $i ?>" class="modal">
+                                    <div>
+                                      <div class="row">
+                                        <div class=" col-8 col-md-3"> </div>
+                                        <div class=" col-8 col-md-6">
+                                          <!-- Modal Content -->
+                                          <div class="modal-content"> 
+                                          <!-- close modal -->
+                                          <span class="close<?php echo $i ?>"><h3>&times;</h3></span>
+                                          <div class="inside-modal">
+                                                        <center>
+                                            <h4> Change Your Schedule <br> </h4>  
+                                            <!-- form 1 -->
+                                            
+                                            <form class="reg-content" method="post" action="<?php echo base_url('index.php/MySchedule/edit/'.$event->Event_id); ?>" >
+                                                        <input type="hidden" name="id" value="<?php echo $event->Event_id?>" />
+                                                        <p>Event : </p> <input type="text"  name="Event_nama" value="<?php echo $event->Event_nama ?> ">
+                                                        <p>Date :</p> <input type="date" name="Event_tanggal" value="<?php echo $event->Event_tanggal ?>">
+                                                        <div class="">
+                                                        <p>Time : </p>  <input type="time" name="Event_start" value="<?php echo $event->Event_start ?>"> To 
+                                                        <input type="time" name="Event_stop" value="<?php echo $event->Event_stop ?>">
+                                                        </div>
+
+                                                        <input type="submit" class="button" value="Change!">
+                                            </form>
+                                            <!-- <button class="button"> Create! </button>  -->
+                                            </center>
+                                                    </div>
+                                                
+                                        </div>
+
+                                        <div class=" col-8 col-md-3"> </div>
+                                      </div>
+                                      </div>
+                                    </div>
                                 </div>
+            
+                                
+
+                                <script>
+                                    
+                                    //buat edit
+                                        var modal<?php echo $i ?> = document.getElementById('myModal<?php echo $i ?>');
+                                        //get open modal
+                                        var btn<?php echo $i ?> = document.getElementById("changeEvent<?php echo $i ?>");
+                                        //get span element that close
+                                        var span<?php echo $i ?> = document.getElementsByClassName("close<?php echo $i ?>")[0];
+                                        // open modal
+                                        btn<?php echo $i ?>.onclick = function() {
+                                             modal<?php echo $i ?>.style.display = "block";
+                                        }
+                                        //To close the modal
+                                        span<?php echo $i ?>.onclick = function(){
+                                          modal<?php echo $i ?>.style.display = "none";
+                                        }
+
+                                      //click anywhere close moda
+                                        window.onclick = function(event){
+                                          if (event.target == modal<?php echo $i ?>){
+                                            modal<?php echo $i ?>.style.display = "none";
+                                          }
+                                        }
+
+                                </script>
+                                
+                                <?php $i++; ?>
                             </div>
                         </div>
                     </div>
-                    
-                    
-                    <!--               EVENT 4            -->
-                    <div class="col-6 col-md-3 col-sm-4 event-container-box">
-                       
-                        
-                        <div class="event-container">
-                            <div class="row event-title-container3">
-                                <span class="event-title">Rapat Panti</span>
-                            </div>
-                            <div class="row event-content justify-content-center">
-                                <div class="col-12 text-center event-tanggal">10 Oktober 2018</div>
-                                <div class="col-12 text-center event-jam">18.00 - 21.00</div>
-                                <div class="row person-nama-container">
-                                       <table class="table-person-nama">
-                                            <tbody>
-                                                <tr>
-                                                    <td> Dimas </td>
-                                                    <td> Risyad </td>
-                                                    <td> Harris </td>
-                                                    <td> Putratama </td>
-                                                    <td> Satria </td>
-                                                </tr>
-                                           </tbody>
-                                        </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <!--               EVENT 5            -->
-                    <div class="col-6 col-md-3 col-sm-4 event-container-box">
-                       
-                        
-                        <div class="event-container">
-                            <div class="row event-title-container4">
-                                <span class="event-title">Rapat Panti</span>
-                            </div>
-                            <div class="row event-content justify-content-center">
-                                <div class="col-12 text-center event-tanggal">10 Oktober 2018</div>
-                                <div class="col-12 text-center event-jam">18.00 - 21.00</div>
-                                <div class="row person-nama-container">
-                                       <table class="table-person-nama">
-                                            <tbody>
-                                                <tr>
-                                                    <td> Dimas </td>
-                                                    <td> Risyad </td>
-                                                    <td> Harris </td>
-                                                    <td> Putratama </td>
-                                                    <td> Satria </td>
-                                                </tr>
-                                           </tbody>
-                                        </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <!--               EVENT 6             -->
-                    <div class="col-6 col-md-3 col-sm-4 event-container-box">
-                       
-                        
-                        <div class="event-container">
-                            <div class="row event-title-container2">
-                                <span class="event-title">Rapat Panti</span>
-                            </div>
-                            <div class="row event-content justify-content-center">
-                                <div class="col-12 text-center event-tanggal">10 Oktober 2018</div>
-                                <div class="col-12 text-center event-jam">18.00 - 21.00</div>
-                                <div class="row person-nama-container">
-                                       <table class="table-person-nama">
-                                            <tbody>
-                                                <tr>
-                                                    <td> Dimas </td>
-                                                    <td> Risyad </td>
-                                                    <td> Harris </td>
-                                                    <td> Putratama </td>
-                                                    <td> Satria </td>
-                                                </tr>
-                                           </tbody>
-                                        </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <!--               EVENT 7             -->
-                    <div class="col-6 col-md-3 col-sm-4 event-container-box">
-                       
-                        
-                        <div class="event-container">
-                            <div class="row event-title-container4">
-                                <span class="event-title">Rapat Panti</span>
-                            </div>
-                            <div class="row event-content justify-content-center">
-                                <div class="col-12 text-center event-tanggal">10 Oktober 2018</div>
-                                <div class="col-12 text-center event-jam">18.00 - 21.00</div>
-                                <div class="row person-nama-container">
-                                       <table class="table-person-nama">
-                                            <tbody>
-                                                <tr>
-                                                    <td> Dimas </td>
-                                                    <td> Risyad </td>
-                                                    <td> Harris </td>
-                                                    <td> Putratama </td>
-                                                    <td> Satria </td>
-                                                </tr>
-                                           </tbody>
-                                        </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
+
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
+
+
+        <!-- modal for Add New Event -->
+           <!-- the modal -->
+          <div id="myModal" class="modal">
+            <div>
+              <div class="row">
+                <div class=" col-8 col-md-3"> </div>
+                <div class=" col-8 col-md-6">
+                  <!-- Modal Content -->
+                  <div class="modal-content"> 
+                  <!-- close modal -->
+                  <span class="close">&times;</span>
+                  <div class="inside-modal">
+                                <center>
+                    <h4> Create Your Schedule <br> </h4>  
+                    <!-- form 1 -->
+                    
+                    <form class="reg-content" method="post" action="<?php echo base_url('index.php/MySchedule/addEvent'); ?>" >
+                                <p>Event : </p> <input type="text"  name="Event_nama" placeholder="Name Of Event">
+                                <p>Date :</p> <input type="date" name="Event_tanggal" placeholder="Date">
+                                <div class="">
+                                <p>Time : </p>  <input type="time" name="Event_start" placeholder="Start"> To 
+                                <input type="time" name="Event_stop" placeholder="stop">
+                                </div>
+
+                                <input type="submit" class="button" value="Create!">
+                    </form>
+                    <!-- <button class="button"> Create! </button>  -->
+                    </center>
+                            </div>
+                        
+                </div>
+
+                <div class=" col-8 col-md-3"> </div>
+              </div>
+              </div>
+            </div>
+            
+          </div>
+
+
+          <!-- modal for Edit Event -->
+           <!-- the modal -->
+          <div id="myModal2" class="modal">
+            <div>
+              <div class="row">
+                <div class=" col-8 col-md-3"> </div>
+                <div class=" col-8 col-md-6">
+                  <!-- Modal Content -->
+                  <div class="modal-content"> 
+                  <!-- close modal -->
+                  <span class="close close2">&times;</span>
+                  <div class="inside-modal">
+                                <center>
+                    <h4> Change Your Schedule <br> </h4>  
+                    <!-- form 1 -->
+                    
+                    <form class="reg-content" method="post" action="<?php echo base_url('index.php/MySchedule/edit/'.$event->Event_id); ?>" >
+                                <input type="hidden" name="id" value="<?php echo $event->Event_id?>" />
+                                <p>Event : </p> <input type="text"  name="Event_nama" value="<?php echo $event->Event_nama ?> ">
+                                <p>Date :</p> <input type="date" name="Event_tanggal" value="<?php echo $event->Event_tanggal ?>">
+                                <div class="">
+                                <p>Time : </p>  <input type="time" name="Event_start" value="<?php echo $event->Event_start ?>"> To 
+                                <input type="time" name="Event_stop" value="<?php echo $event->Event_stop ?>">
+                                </div>
+
+                                <input type="submit" class="button" value="Change!">
+                    </form>
+                    <!-- <button class="button"> Create! </button>  -->
+                    </center>
+                            </div>
+                        
+                </div>
+
+                <div class=" col-8 col-md-3"> </div>
+              </div>
+              </div>
+            </div>
+            
+          </div>
+
 	</div>
     <script>
+        // get modal
+
+        var modal = document.getElementById('myModal');
+        //get open modal
+        var btn = document.getElementById("newEvent");
+        var btn2 = document.getElementById("newEvent2");
+        //get span element that close
+        var span = document.getElementsByClassName("close")[0];
+        // open modal
+        btn.onclick = function() {
+             modal.style.display = "block";
+        }
+        // open modal
+        btn2.onclick = function() {
+             modal.style.display = "block";
+        }
+        //To close the modal
+        span.onclick = function(){
+          modal.style.display = "none";
+        }
+
+        //click anywhere close moda
+        window.onclick = function(event){
+          if (event.target == modal){
+            modal.style.display = "none";
+          }
+        }
+
+        //buat edit
+        var modal2 = document.getElementById('myModal2');
+        //get open modal
+        var btn3 = document.getElementById("changeEvent");
+        //get span element that close
+        var span2 = document.getElementsByClassName("close2")[0];
+        // open modal
+        btn3.onclick = function() {
+             modal2.style.display = "block";
+        }
+        //To close the modal
+        span2.onclick = function(){
+          modal2.style.display = "none";
+        }
+
+      //click anywhere close moda
+        window.onclick = function(event){
+          if (event.target == modal2){
+            modal2.style.display = "none";
+          }
+        }
+
         //Open Home Page
         function openHome() {
             window.location.href = "<?php echo base_url('index.php/Home') ?>";
