@@ -42,17 +42,17 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
               <h5 style="font-size: 35px;"class="wow animated fadeIn"><?php echo $display;?></h5>
               <a class="wow animated fadeIn"href="<?php echo base_url('index.php/login/logout'); ?>"style="color:rgb(169,169,169)";>Logout</a>
             </div>
-            <div style="position: absolute; top: 8%;left: 50%;transform: translate(-50%,-50%); border-style: solid;border-color: transparent;" class="col-5 col-sm-7 text-center wow animated fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+            <div style="border-style: solid;border-color: transparent;" class="col-5 col-sm-7 text-center wow animated fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Logo.png" alt="">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Header.png" alt="">
                 <br><br>
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/FriendList/Friend List.png" alt="">
             </div>
-            <div style="position: absolute; top: 0%;left:91.5%;transform: translate(-50%,-50%);border-style: solid;border-color: transparent;"class="notif-button-container col-2 col-sm-1 wow animated fadeInRight" data-wow-duration="1s" data-wow-delay="1s">
+            <div style="border-style: solid;border-color: transparent;"class="notif-button-container col-2 col-sm-1 wow animated fadeInRight" data-wow-duration="1s" data-wow-delay="1s">
               <img class="notification-button" src="<?php echo base_url() ?>assets/img/HomePage/Component%203.png" alt="">
           </div>
           <div class="home-inner row justify-content-center" style="border-style: solid; border-color: transparent;">
-            <div class="home-side-container col-2 col-sm-1" style="position: absolute; top: 55%;left: 10%;transform: translate(-50%,-50%); border-style: solid;border-color: transparent;">
+            <div class="home-side-container col-2 col-sm-1" style="border-style: solid;border-color: transparent;">
             <button style="background-color: Transparent; background-repeat:no-repeat; border: none;cursor:pointer;overflow: hidden;"><img src="<?php echo base_url() ?>assets\img\FriendList\arrowleft.png"></button>
           </div>
           <div class="main-text-container col-12 col-md-10 col-sm-10" style="border-style: solid;border-color: transparent;">
@@ -93,7 +93,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
           <img class="friendicon" src="<?php echo base_url() ?>assets\img\FriendList\Polygon.png">
           </div>
 
-          <div class="col-2 col-md-1 col-sm-1" style="position: absolute; top: 55%;left: 90%;transform: translate(-50%,-50%); border-style: solid;border-color: transparent;">
+          <div class="col-2 col-md-1 col-sm-1" style="border-style: solid;border-color: transparent;">
             <button style="background-color: Transparent; background-repeat:no-repeat; border: none;cursor:pointer;overflow: hidden;"><img src="<?php echo base_url() ?>assets\img\FriendList\arrowright.png"></button>
           </div>
         </div>
