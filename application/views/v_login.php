@@ -42,7 +42,7 @@
 				<div class="col-12 col-md-6 left-container wow animated slideInLeft" data-wow-duration="1s" data-wow-delay="1s"> 
 				
 					<!-- username row -->
-					<?php echo validation_errors(); ?>
+					
 					<?php echo form_open('login/aksi_login') ?>
 						<div class="content-box row">
 						<div class="col-2 col-md-4 col-sm-3"> </div>
