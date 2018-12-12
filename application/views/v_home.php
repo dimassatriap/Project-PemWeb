@@ -8,6 +8,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
         $result = mysqli_query($conn, $query);
         $row = mysqli_fetch_array($result);
         $display = $row['displayname'];
+        $Person_Id = $row['Person_Id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -99,7 +100,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
             <h4> Create Your Schedule <br> </h4>  
             <!-- form 1 -->
             
-            <form class="reg-content" method="post" action="<?php echo base_url('index.php/Home/addEvent'); ?>" >
+            <form class="reg-content" method="post" action="<?php echo base_url('index.php/Myschedule/addEvent/'.$Person_Id); ?>" >
                         <p>Event : </p> <input type="text"  name="Event_nama" placeholder="Name Of Event" required="">
                         <p>Date :</p> <input type="date" name="Event_tanggal" placeholder="Date" required="">
                         <div class="">
@@ -162,7 +163,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
 
     //Open Myschedule Page
     function openMySchedule(){
-      window.location.href = "<?php echo base_url('index.php/MySchedule'); ?>";
+      window.location.href = "<?php echo base_url('index.php/MySchedule/index/'.$Person_Id); ?>";
     }
 
     //Open FriendsList Page

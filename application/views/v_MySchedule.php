@@ -7,6 +7,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
             $result = mysqli_query($conn, $query);
         $row = mysqli_fetch_array($result);
         $display = $row['displayname'];
+        $Person_Id = $row['Person_Id'];
             ?>
 
 
@@ -205,7 +206,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
                     <h4> Create Your Schedule <br> </h4>  
                     <!-- form 1 -->
                     
-                    <form class="reg-content" method="post" action="<?php echo base_url('index.php/MySchedule/addEvent'); ?>" >
+                    <form class="reg-content" method="post" action="<?php echo base_url('index.php/MySchedule/addEvent/'.$Person_Id); ?>" >
                                 <p>Event : </p> <input type="text"  name="Event_nama" placeholder="Name Of Event" required="">
                                 <p>Date :</p> <input type="date" name="Event_tanggal" placeholder="Date" required="">
                                 <div class="">
@@ -229,45 +230,6 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
           </div>
 
 
-          <!-- modal for Edit Event -->
-           <!-- the modal -->
-          <div id="myModal2" class="modal">
-            <div>
-              <div class="row">
-                <div class=" col-8 col-md-3"> </div>
-                <div class=" col-8 col-md-6">
-                  <!-- Modal Content -->
-                  <div class="modal-content"> 
-                  <!-- close modal -->
-                  <span class="close close2">&times;</span>
-                  <div class="inside-modal">
-                                <center>
-                    <h4> Change Your Schedule <br> </h4>  
-                    <!-- form 1 -->
-                    
-                    <form class="reg-content" method="post" action="<?php echo base_url('index.php/MySchedule/edit/'.$event->Event_id); ?>" >
-                                <input type="hidden" name="id" value="<?php echo $event->Event_id?>" />
-                                <p>Event : </p> <input type="text"  name="Event_nama" value="<?php echo $event->Event_nama ?> ">
-                                <p>Date :</p> <input type="date" name="Event_tanggal" value="<?php echo $event->Event_tanggal ?>">
-                                <div class="">
-                                <p>Time : </p>  <input type="time" name="Event_start" value="<?php echo $event->Event_start ?>"> To 
-                                <input type="time" name="Event_stop" value="<?php echo $event->Event_stop ?>">
-                                </div>
-
-                                <input type="submit" class="button" value="Change!">
-                    </form>
-                    <!-- <button class="button"> Create! </button>  -->
-                    </center>
-                            </div>
-                        
-                </div>
-
-                <div class=" col-8 col-md-3"> </div>
-              </div>
-              </div>
-            </div>
-            
-          </div>
 
 	</div>
     <script>

@@ -14,14 +14,16 @@ class m_event extends CI_Model
 	public $Event_tanggal;
 	public $Event_start;
 	public $Event_stop;
+	Public $Person_Id;
 
-	public function save(){
+	public function save($Person_Id){
 		$post = $this->input->post();
 		$this->Event_id = uniqid();
 		$this->Event_nama = $post["Event_nama"];
 		$this->Event_tanggal = $post["Event_tanggal"];
 		$this->Event_start = $post["Event_start"];
 		$this->Event_stop = $post["Event_stop"];
+		$this->Person_Id = $Person_Id;
 
 		$this->db->insert($this->table, $this); 
 	}
@@ -39,6 +41,11 @@ class m_event extends CI_Model
 
 	public function getAll(){
         return $this->db->get($this->table)->result();
+    }
+
+    public function getById($Person_Id)
+    {
+        return $this->db->get_where($this->table, ["Person_Id" => $Person_Id])->result();
     }
 
     public function delete($id) {

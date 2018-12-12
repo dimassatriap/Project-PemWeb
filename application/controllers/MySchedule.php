@@ -10,18 +10,18 @@ class MySchedule extends CI_Controller{
 		}
 	}
  
-	function index(){
-		$data["events"] = $this->m_event->getAll();
+	function index($Person_Id){
+		$data["events"] = $this->m_event->getById($Person_Id);
 		$this->load->view('v_MySchedule', $data);
 	}
 
-	public function addEvent(){
+	public function addEvent($Person_Id){
 		$event = $this->m_event;
 
-		$event->save();
+		$event->save($Person_Id);
 		$this->session->set_flashdata('success', 'Event disimpan');
 
-		redirect(site_url('MySchedule'));
+		redirect(site_url('MySchedule/index/'.$Person_Id));
 	}
 
 	public function edit($id=null)
