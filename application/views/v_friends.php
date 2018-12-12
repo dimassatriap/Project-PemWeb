@@ -38,11 +38,11 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
             <div  class="profile-pic-container col-2 col-sm-1 wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="1s" style="border-style: solid;border-color: transparent;" onclick="openHome() ">
                 <img class="profile-pic " src="<?php echo base_url() ?>assets/img/HomePage/Component%204.png" alt="">
             </div>
-            <div class="name-container col-2">
-              <h5 style="font-size: 35px;"class="wow animated fadeIn"><?php echo $display;?></h5>
+            <div class="name-container col-1">
+              <h5 class="wow animated fadeIn"><?php echo $display;?></h5>
               <a class="wow animated fadeIn"href="<?php echo base_url('index.php/login/logout'); ?>"style="color:rgb(169,169,169)";>Logout</a>
             </div>
-            <div style="border-style: solid;border-color: transparent;" class="col-5 col-sm-7 text-center wow animated fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+            <div style="border-style: solid;border-color: transparent;" class="col-7 col-sm-9 text-center wow animated fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Logo.png" alt="">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Header.png" alt="">
                 <br><br>
