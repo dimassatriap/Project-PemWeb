@@ -31,12 +31,10 @@ class Login extends CI_Controller{
     		die("Connection failed: " . $conn->connect_error);
     		$post_display = mysqli_real_escape_string($conn, $_POST['displayname']);
     	}
-    
+    	
 		$username = $this->input->post('name');
 		$password = $this->input->post('password');
 		$query = "SELECT * FROM person WHERE Person_nama='$username'";
-		$row = mysqli_fetch_array($query);
-		$rec = $row['displayname'];
 
 		$where = array(
 			'Person_nama' => $username,

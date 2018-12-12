@@ -30,7 +30,7 @@ class MySchedule extends CI_Controller{
 
 		$event->update();
 		$this->session->set_flashdata('success', 'Berhasil disimpan');
-
+		
 		redirect(site_url('MySchedule'));
 
 	}

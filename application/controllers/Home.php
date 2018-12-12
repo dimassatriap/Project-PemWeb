@@ -4,6 +4,7 @@ class Home extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model("m_event");
+		$this->load->model("m_register");
 	
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("index.php/login"));
@@ -11,6 +12,7 @@ class Home extends CI_Controller{
 	}
  
 	function index(){
+		
 		$this->load->view('v_home');
 	}
 

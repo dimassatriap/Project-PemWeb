@@ -70,36 +70,35 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
                </div>
            </div>
            
-           <div class="main-text-container text-center col-12 col-md-8 col-sm-6">
-           
-            <form action="<?php echo base_url('index.php/register/addUser'); ?>" class="reg-content" method="post">
-              <input type="hidden" name="id" value="<?php echo $where['Person_nama'] ?>">
+           <div class="main-text-container text-center col-12 col-md-8 col-sm-6"> 
+            <form action="<?php echo base_url('index.php/register/editUser/' .$user->Person_Id); ?>" class="reg-content" method="post">
+
+              <input type="hidden" name="id" value="<?php echo $user->Person_Id ?>">
             Name : 
 
-                <input type="text" id="Regn-name" name="reg-nama" placeholder="name" value="<?php echo $where['Person_nama'] ?>"> <br>
+                <input type="text" id="Regn-name" name="upnama" placeholder="name" value="<?php echo $user->displayname ?>"> <br>
           
 
             Username : 
             
-                <input type="text" id="Regn-username" name="reg-user" placeholder="username"  value="<?php echo $where['Person_nama']?>"> <br>
+                <input type="text" id="Regn-username" name="upuser" placeholder="username"  value="<?php echo $user->Person_nama ?>"> <br>
           
 
             Password : 
           
-                <input type="password" id="Regn-passwd" name="reg-pass" placeholder="password" value="<?php echo $where['Person_nama'] ?>"> <br>
+                <input type="password" id="Regn-passwd" name="uppass" placeholder="password" value="<?php echo $user->password ?>"> <br>
             
 
             <!-- input -->
                 <input class = "btn1" type="submit" value=" Edit ">
-            </center>
+
             </form>
-         
            </div>
            
            <div class="col-8 col-md-2 col-sm-3"></div>
            
         </div>
-    </div>
+    </  div>
 
 
   <!-- modal for Add New Event -->

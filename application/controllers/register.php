@@ -7,8 +7,9 @@ class Register extends CI_Controller{
 		$this->load->library('form_validation');
 	}
 
-	function index(){
-		$this->load->view('v_login');
+	function index($username){
+		$data["user"] = $this->m_register->getById($username);
+		$this->load->view('v_options', $data);
 	}
 
 	public function addUser(){
@@ -19,6 +20,19 @@ class Register extends CI_Controller{
 
 		$this->load->view('v_login');
 	}
+
+	public function editUser($username=null)
+	{
+		$user = $this->m_register;
+
+		$user->updateperson();
+		$this->session->set_flashdata('success', 'Berhasil disimpan');
+
+		$this->load->view('v_home');
+	}
+
+
+
 }
 
 ?>

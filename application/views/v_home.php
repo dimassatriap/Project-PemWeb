@@ -1,4 +1,4 @@
-    <?php
+      <?php
 // Create connection
 $conn = new mysqli('localhost','root','', 'skedulindb');
 
@@ -172,7 +172,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
 
     //Oper Option
     function openOption(){
-      window.location.href = "<?php echo base_url('index.php/Options'); ?>";
+      window.location.href = "<?php echo base_url('index.php/register/index/'.$username); ?>";
     }
   </script>
 
