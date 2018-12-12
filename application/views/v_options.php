@@ -78,8 +78,6 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
                 <img style="width: 35px; height: 35px;"class="img-icon" src="<?php echo base_url() ?>assets/img/LoginPage/name.png">  
               </div>
               <input class="col-8 col-sm-5" type="hidden" name="id" value="<?php echo $user->Person_Id ?>">
-            Name : 
-
            <p> Name : <input type="text" id="Regn-name" name="upnama" placeholder="name" value="<?php echo $user->displayname ?>"></p>
 
           </div>
@@ -87,12 +85,6 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
   <div class="img-box col-2 col-sm-1">
                 <img class="img-icon" src="<?php echo base_url() ?>assets/img/LoginPage/person-icon.png">  
               </div>
-            Username : 
-            
-
-                <input type="text" id="Regn-username" name="upuser" placeholder="username"  value="<?php echo $user->Person_nama ?>" readonly> <br>
-          
-
            <p> Username : <input type="text" id="Regn-username" name="upuser" placeholder="username"  value="<?php echo $user->Person_nama ?>"> </p>
                 
           </div>
