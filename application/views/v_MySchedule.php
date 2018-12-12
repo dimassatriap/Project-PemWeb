@@ -206,11 +206,11 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
                     <!-- form 1 -->
                     
                     <form class="reg-content" method="post" action="<?php echo base_url('index.php/MySchedule/addEvent'); ?>" >
-                                <p>Event : </p> <input type="text"  name="Event_nama" placeholder="Name Of Event">
-                                <p>Date :</p> <input type="date" name="Event_tanggal" placeholder="Date">
+                                <p>Event : </p> <input type="text"  name="Event_nama" placeholder="Name Of Event" required="">
+                                <p>Date :</p> <input type="date" name="Event_tanggal" placeholder="Date" required="">
                                 <div class="">
-                                <p>Time : </p>  <input type="time" name="Event_start" placeholder="Start"> To 
-                                <input type="time" name="Event_stop" placeholder="stop">
+                                <p>Time : </p>  <input type="time" name="Event_start" placeholder="Start" required=""> To 
+                                <input type="time" name="Event_stop" placeholder="stop" required="">
                                 </div>
 
                                 <input type="submit" class="button" value="Create!">

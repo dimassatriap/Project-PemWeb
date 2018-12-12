@@ -52,7 +52,7 @@
 							<div class="col-8 col-sm-5">
 								
 
-									  <input type="text" id="fname" name="name" placeholder="username">
+									  <input type="text" id="fname" name="name" placeholder="username" required="">
 
 								
 							</div>
@@ -68,7 +68,7 @@
 							<div class="col-8 col-sm-5">
 								
 
-									  <input type="password" id="passname" name="password" placeholder="password">
+									  <input type="password" id="passname" name="password" placeholder="password" required="">
 									  
 								
 							</div>
@@ -129,17 +129,17 @@
 						
 					<form  method="post" action="<?php echo base_url('index.php/Register/addUser'); ?>" >
 						Name : 
-								<input type="text" name="displayname" placeholder="name">
+								<input type="text" name="displayname" placeholder="name" required="">
 					
 
 						Username : 
 						
-								<input type="text"  name="Person_nama" placeholder="username">
+								<input type="text"  name="Person_nama" placeholder="username" required="">
 					
 
 						Password : 
 					
-								<input type="password"  name="password" placeholder="password">
+								<input type="password"  name="password" placeholder="password" required="">
 						
 
 						<!-- input -->
