@@ -73,20 +73,21 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
            <div class="main-text-container text-center col-12 col-md-8 col-sm-6"> 
             <form action="<?php echo base_url('index.php/register/editUser/' .$user->Person_Id); ?>" class="reg-content" method="post">
 
-              <input type="hidden" name="id" value="<?php echo $user->Person_Id ?>">
+              <input class="col-8 col-sm-5" type="hidden" name="id" value="<?php echo $user->Person_Id ?>">
             Name : 
 
-                <input type="text" id="Regn-name" name="upnama" placeholder="name" value="<?php echo $user->displayname ?>"> <br>
+                <input class="col-8 col-sm-5" type="text" id="Regn-name" name="upnama" placeholder="name" value="<?php echo $user->displayname ?>"> <br>
           
 
             Username : 
             
+
                 <input type="text" id="Regn-username" name="upuser" placeholder="username"  value="<?php echo $user->Person_nama ?>" readonly> <br>
           
 
             Password : 
           
-                <input type="password" id="Regn-passwd" name="uppass" placeholder="password" value="<?php echo $user->password ?>"> <br>
+                <input class="col-8 col-sm-5" type="password" id="Regn-passwd" name="uppass" placeholder="password" value="<?php echo $user->password ?>"> <br>
             
 
             <!-- input -->

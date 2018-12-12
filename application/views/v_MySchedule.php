@@ -73,7 +73,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
             <div class="all-event-container">
                 <div class="row event-container-row">
                     
-                                <?php $i = 5; ?>
+                                <?php $i = 5; $j = 1; ?>
 
                     <?php foreach ($events as $event): ?> 
 
@@ -82,7 +82,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
                        
                         
                         <div class="event-container">
-                            <div class="row event-title-container1">
+                            <div class="row event-title-container<?php echo $j ?>">
                                 <span class="event-title"> <?php echo $event->Event_nama ?> </span>
                             </div>
                             <div class="row event-content justify-content-center">
@@ -104,7 +104,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
                                 <div class="row">
                                     <div class="col 12 text-center">
                                         <a id="changeEvent<?php echo $i ?>" class=" btn btn-small"><i class=" fas fa-edit"></i> Edit</a>
-                                        <a href="<?php echo site_url('MySchedule/delete/'.$event->Event_id) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus<?php echo $i ?></a>
+                                        <a href="<?php echo site_url('MySchedule/delete/'.$event->Event_id) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                                     </div>
                                 </div>
                                 
@@ -175,7 +175,10 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
 
                                 </script>
                                 
-                                <?php $i++; ?>
+                                <?php $i++; $j++; 
+                                if($j==5){
+                                  $j=1;}
+                                  ?>
                             </div>
                         </div>
                     </div>

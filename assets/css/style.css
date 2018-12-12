@@ -11,6 +11,9 @@ html,
 body {
     height: 100%;    
 }
+a {
+  color:rgb(169,169,169);
+}
 
 @font-face { 
     font-family: Kano; 
@@ -121,17 +124,17 @@ body {
 =================================================================================*/
 
 .friendicon {
-  width:  160px;
+  width:  105px;
   height: auto;
   margin-left: 10px;
 }
 .friendicon-1{
-  width:  160px;
+  width:  105px;
   height: auto;
   margin-left: 140px;
 }
 .friendicon-2{
-  width:  160px;
+  width:  105px;
   height: auto;
   margin-left: 55px;
 }
