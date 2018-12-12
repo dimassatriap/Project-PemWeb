@@ -53,7 +53,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
 	        </div>
 	   </div>
 	   
-        <div class="home-inner row justify-content-center">
+        <div class="home-inner row">
           
            <div class="home-side-container col-7 col-md-2 col-sm-3">
               
@@ -69,28 +69,43 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
                    <img class="icon-myschedule" src="<?php echo base_url() ?>assets/img/HomePage/icon-myschedule.png" alt="" onclick="openMySchedule()">
                </div>
            </div>
-           
-           <div class="main-text-container text-center col-12 col-md-8 col-sm-6"> 
+
+           <div class="main-text-container text-center col-12 col-md-8 col-sm-6 row justify-content-center"> 
+
             <form action="<?php echo base_url('index.php/register/editUser/' .$user->Person_Id); ?>" class="reg-content" method="post">
 
-              <input class="col-8 col-sm-5"type="hidden" name="id" value="<?php echo $user->Person_Id ?>">
-            Name : 
+              <div class="content-box row">
+                <div class="img-box col-2 col-sm-1">
+                <img style="width: 35px; height: 35px;"class="img-icon" src="<?php echo base_url() ?>assets/img/LoginPage/name.png">  
+              </div>
 
-                <input class="col-8 col-sm-5" type="text" id="Regn-name" name="upnama" placeholder="name" value="<?php echo $user->displayname ?>"> <br>
-          
+           <p> Name : <input type="text" id="Regn-name" name="upnama" placeholder="name" value="<?php echo $user->displayname ?>"></p>
 
-            Username : 
-            
-                <input class="col-8 col-sm-5" type="text" id="Regn-username" name="upuser" placeholder="username"  value="<?php echo $user->Person_nama ?>"> <br>
-          
+          </div>
+<div class="content-box row">
+  <div class="img-box col-2 col-sm-1">
+                <img class="img-icon" src="<?php echo base_url() ?>assets/img/LoginPage/person-icon.png">  
+              </div>
 
-            Password : 
-          
-                <input class="col-8 col-sm-5" type="password" id="Regn-passwd" name="uppass" placeholder="password" value="<?php echo $user->password ?>"> <br>
+           <p> Username : <input type="text" id="Regn-username" name="upuser" placeholder="username"  value="<?php echo $user->Person_nama ?>"> </p>
+                
+          </div>
+<div style="margin-bottom: 10px;"class="content-box row">
+  <div class="img-box col-2 col-sm-1">
+                <img class="img-icon" src="<?php echo base_url() ?>assets/img/LoginPage/img_131108.png">  
+              </div>
+            <p>Password : <input type="password" id="Regn-passwd" name="uppass" placeholder="password" value="<?php echo $user->password ?>"> </p>
+                
+</div>
             
 
             <!-- input -->
-                <input class = "btn1" type="submit" value=" Edit ">
+ 
+                <div class="col-2 col-md-4 col-sm-4"> </div>
+              <div class=" col-8 col-sm-6">
+                <input class = "button" type="submit" value=" Edit "> 
+              </div>
+            </div>
 
             </form>
            </div>
@@ -98,7 +113,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
            <div class="col-8 col-md-2 col-sm-3"></div>
            
         </div>
-    </  div>
+    </div>
 
 
   <!-- modal for Add New Event -->

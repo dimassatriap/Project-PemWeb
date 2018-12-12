@@ -286,6 +286,16 @@ body {
     border-radius: 10px;
 }
 
+.optionform {
+    width: 95%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #DAD1D1;
+    color: black;
+    border-radius: 10px;
+}
 input[type=time]{
     width: 45%;
     padding: 12px 20px;
