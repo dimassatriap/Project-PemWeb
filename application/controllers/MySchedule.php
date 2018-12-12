@@ -10,7 +10,8 @@ class MySchedule extends CI_Controller{
 		}
 	}
  
-	function index($Person_Id){
+	function index(){
+		$Person_Id = $this->uri->segment(3); 
 		$data["events"] = $this->m_event->getById($Person_Id);
 		$this->load->view('v_MySchedule', $data);
 	}
@@ -24,22 +25,25 @@ class MySchedule extends CI_Controller{
 		redirect(site_url('MySchedule/index/'.$Person_Id));
 	}
 
-	public function edit($id=null)
+	public function edit()
 	{
+		$id= $this->uri->segment(3); 
+		$Person_Id = $this->uri->segment(4);
 		$event = $this->m_event;
 
-		$event->update();
+		$event->update($Person_Id);
 		$this->session->set_flashdata('success', 'Berhasil disimpan');
 		
-		redirect(site_url('MySchedule'));
+		redirect(site_url('MySchedule/index/'.$Person_Id));
 
 	}
 
 	public function delete($id=null) {
+		$Person_Id = $this->uri->segment(4);
         if (!isset($id)) show_404();
         
         if ($this->m_event->delete($id)) {
-            redirect(site_url('MySchedule'));
+            redirect(site_url('MySchedule/index/'.$Person_Id));
         }
     }
 }

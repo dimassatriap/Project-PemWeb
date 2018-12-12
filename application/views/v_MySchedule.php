@@ -105,7 +105,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
                                 <div class="row">
                                     <div class="col 12 text-center">
                                         <a id="changeEvent<?php echo $i ?>" class=" btn btn-small"><i class=" fas fa-edit"></i> Edit</a>
-                                        <a href="<?php echo site_url('MySchedule/delete/'.$event->Event_id) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                        <a href="<?php echo site_url('MySchedule/delete/'.$event->Event_id.'/'.$Person_Id) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                                     </div>
                                 </div>
                                 
@@ -125,7 +125,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
                                             <h4> Change Your Schedule <br> </h4>  
                                             <!-- form 1 -->
                                             
-                                            <form class="reg-content" method="post" action="<?php echo base_url('index.php/MySchedule/edit/'.$event->Event_id); ?>" >
+                                            <form class="reg-content" method="post" action="<?php echo base_url('index.php/MySchedule/edit/'.$event->Event_id).'/'.$Person_Id; ?>" >
                                                         <input type="hidden" name="id" value="<?php echo $event->Event_id?>" />
                                                         <p>Event : </p> <input type="text"  name="Event_nama" value="<?php echo $event->Event_nama ?> ">
                                                         <p>Date :</p> <input type="date" name="Event_tanggal" value="<?php echo $event->Event_tanggal ?>">

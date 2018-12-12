@@ -28,13 +28,14 @@ class m_event extends CI_Model
 		$this->db->insert($this->table, $this); 
 	}
 
-	public function update(){
+	public function update($Person_Id){
 		$post = $this->input->post();
 		$this->Event_id = $post["id"];
 		$this->Event_nama = $post["Event_nama"];
 		$this->Event_tanggal = $post["Event_tanggal"];
 		$this->Event_start = $post["Event_start"];
 		$this->Event_stop = $post["Event_stop"];
+		$this->Person_Id = $Person_Id;
 
 		$this->db->update($this->table, $this, array('Event_id' => $post['id']));
 	}
