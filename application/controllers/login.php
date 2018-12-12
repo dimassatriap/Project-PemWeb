@@ -57,7 +57,11 @@ class Login extends CI_Controller{
 			}
 			
 			else{
-				echo "Username dan password salah !";
+				$this->load->view('v_login');
+				$message = "Wrong Password Or Username";
+				echo "<script type='text/javascript'> alert ('$message'); </script>";
+
+
 			}
 		}
 

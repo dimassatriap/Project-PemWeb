@@ -37,7 +37,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
 	<div class="home">
 	    <div class="row">
             <div class="profile-pic-container col-2 col-sm-1">
-                <img class="profile-pic " src="<?php echo base_url() ?>assets/img/HomePage/Component%204.png" alt="">
+                <img class="profile-pic " src="<?php echo base_url() ?>assets/img/HomePage/Component%204.png" alt="" onclick="openHome()">
             </div>
             <div class="name-container col-1">
             	<h5><?php echo $display;?></h5>
@@ -73,11 +73,12 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
            <div class="main-text-container text-center col-12 col-md-8 col-sm-6 row justify-content-center"> 
 
             <form action="<?php echo base_url('index.php/register/editUser/' .$user->Person_Id); ?>" class="reg-content" method="post">
-
               <div class="content-box row">
                 <div class="img-box col-2 col-sm-1">
                 <img style="width: 35px; height: 35px;"class="img-icon" src="<?php echo base_url() ?>assets/img/LoginPage/name.png">  
               </div>
+              <input class="col-8 col-sm-5" type="hidden" name="id" value="<?php echo $user->Person_Id ?>">
+            Name : 
 
            <p> Name : <input type="text" id="Regn-name" name="upnama" placeholder="name" value="<?php echo $user->displayname ?>"></p>
 
@@ -86,6 +87,11 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
   <div class="img-box col-2 col-sm-1">
                 <img class="img-icon" src="<?php echo base_url() ?>assets/img/LoginPage/person-icon.png">  
               </div>
+            Username : 
+            
+
+                <input type="text" id="Regn-username" name="upuser" placeholder="username"  value="<?php echo $user->Person_nama ?>" readonly> <br>
+          
 
            <p> Username : <input type="text" id="Regn-username" name="upuser" placeholder="username"  value="<?php echo $user->Person_nama ?>"> </p>
                 
@@ -199,6 +205,12 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
     function openFriends(){
       window.location.href = "<?php echo base_url('index.php/Friends'); ?>";
     }
+
+   //Open Home Page
+    function openHome() {
+      window.location.href = "<?php echo base_url('index.php/Home') ?>";
+    }
+        
 	</script>
 
 </body>
