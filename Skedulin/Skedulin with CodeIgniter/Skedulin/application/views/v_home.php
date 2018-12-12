@@ -40,7 +40,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
             </div>
             <div class="name-container col-1">
               <h5><?php echo $display;?></h5>
-              <a href="<?php echo base_url('index.php/login/logout'); ?>">Logout</a>
+              <a href="<?php echo base_url('index.php/login/logout'); ?>" style="color:rgb(169,169,169)">Logout</a>
             </div>
           <div class="col-6 col-sm-8 text-center">
                 <img class="home-title" src="<?php echo base_url() ?>assets/img/HomePage/Logo.png" alt="">
