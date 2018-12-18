@@ -45,10 +45,10 @@ Dengan mengunakan xampp dan framework PHP: CodeIgniter, anda dapat menajalankan 
 ![(MakeEvent)MySchedule-Page](https://github.com/dimassatriap/Project-PemWeb/blob/master/Mockup/Implementation/(MakeEvent)MySchedule-Page.png)
 
 ## Personalization Page ##
-![Personalization Page](https://github.com/dimassatriap/Project-PemWeb/blob/master/Mockup/Implementation/(MakeEvent)Personalization-Page.png)
+![Personalization Page](https://github.com/dimassatriap/Project-PemWeb/blob/master/Mockup/Implementation/Personalization-Page.png)
 
 ## Friend List Page ##
-![Friend List Page ](https://github.com/dimassatriap/Project-PemWeb/blob/master/Mockup/Implementation/(MakeEvent)FriendsList-Page.png)
+![Friend List Page ](https://github.com/dimassatriap/Project-PemWeb/blob/master/Mockup/Implementation/FriendsList-Page.png)
 
 
 
