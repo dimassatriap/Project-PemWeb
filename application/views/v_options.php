@@ -84,29 +84,28 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
            <p> Name : <input type="text" id="Regn-name" name="upnama" placeholder="name" value="<?php echo $user->displayname ?>"></p>
 
           </div>
-<div class="content-box row">
-  <div class="img-box col-2 col-sm-1">
+          <div class="content-box row">
+              <div class="img-box col-2 col-sm-1">
                 <img class="img-icon" src="<?php echo base_url() ?>assets/img/LoginPage/person-icon.png">  
               </div>
-           <p> Username : <input type="text" id="Regn-username" name="upuser" placeholder="username"  value="<?php echo $user->Person_nama ?>" disabled> </p>
+           <p> Username : <input type="text" id="Regn-username" name="upuser" placeholder="username"  value="<?php echo $user->Person_nama ?>" readonly> </p>
                 
           </div>
-<div style="margin-bottom: 10px;"class="content-box row">
-  <div class="img-box col-2 col-sm-1">
-                <img class="img-icon" src="<?php echo base_url() ?>assets/img/LoginPage/img_131108.png">  
-              </div>
-            <p>Password : <input type="password" id="Regn-passwd" name="uppass" placeholder="password" value="<?php echo $user->password ?>"> </p>
-                
-</div>
+          <div style="margin-bottom: 10px;"class="content-box row">
+            <div class="img-box col-2 col-sm-1">
+                          <img class="img-icon" src="<?php echo base_url() ?>assets/img/LoginPage/img_131108.png">  
+                        </div>
+                      <p>Password : <input type="password" id="Regn-passwd" name="uppass" placeholder="password" value="<?php echo $user->password ?>"> </p>
+                          
+          </div>
             
 
             <!-- input -->
  
-                <div class="col-2 col-md-4 col-sm-4"> </div>
+              <div class="col-2 col-md-4 col-sm-4"> </div>
               <div class=" col-8 col-sm-6">
-                <input class = "button" type="submit" value=" Edit "> 
+                <input class = "button" type="submit" value="Edit "> 
               </div>
-            </div>
 
             </form>
            </div>
