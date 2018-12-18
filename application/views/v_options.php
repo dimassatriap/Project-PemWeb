@@ -8,6 +8,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
         $result = mysqli_query($conn, $query);
         $row = mysqli_fetch_array($result);
         $display = $row['displayname'];
+        $Person_Id = $row['Person_Id'];
 ?>
 
 <!DOCTYPE html>
@@ -36,8 +37,10 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
 	
 	<div class="home">
 	    <div class="row">
-            <div class="profile-pic-container col-2 col-sm-1">
+            <div class="profile-pic-container col-2 col-sm-1 text-center">
                 <img class="profile-pic " src="<?php echo base_url() ?>assets/img/HomePage/Component%204.png" alt="" onclick="openHome()">
+                
+                <a class="" href="<?php echo base_url('index.php/Home') ?>">Home</a>
             </div>
             <div class="name-container col-1">
             	<h5><?php echo $display;?></h5>
@@ -85,7 +88,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
   <div class="img-box col-2 col-sm-1">
                 <img class="img-icon" src="<?php echo base_url() ?>assets/img/LoginPage/person-icon.png">  
               </div>
-           <p> Username : <input type="text" id="Regn-username" name="upuser" placeholder="username"  value="<?php echo $user->Person_nama ?>"> </p>
+           <p> Username : <input type="text" id="Regn-username" name="upuser" placeholder="username"  value="<?php echo $user->Person_nama ?>" disabled> </p>
                 
           </div>
 <div style="margin-bottom: 10px;"class="content-box row">
@@ -190,7 +193,7 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
 
     //Open Myschedule Page
     function openMySchedule(){
-      window.location.href = "<?php echo base_url('index.php/MySchedule'); ?>";
+      window.location.href = "<?php echo base_url('index.php/MySchedule/index/'.$Person_Id); ?>";
     }
 
     //Open FriendsList Page

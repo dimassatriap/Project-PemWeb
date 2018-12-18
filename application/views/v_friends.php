@@ -35,8 +35,9 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
   
   <div class="friendlist">
       <div class="row" style="border-style: solid;border-color: transparent;">
-            <div  class="profile-pic-container col-2 col-sm-1 wow animated fadeInLeft" data-wow-duration="1s" data-wow-delay="1s" style="border-style: solid;border-color: transparent;" onclick="openHome() ">
+            <div  class="profile-pic-container col-2 col-sm-1 wow animated fadeInLeft text-center" data-wow-duration="1s" data-wow-delay="1s" style="border-style: solid;border-color: transparent;" onclick="openHome() ">
                 <img class="profile-pic " src="<?php echo base_url() ?>assets/img/HomePage/Component%204.png" alt="">
+                <a class="" href="<?php echo base_url('index.php/Home') ?>">Home</a>
             </div>
             <div class="name-container col-1">
               <h5 class="wow animated fadeIn"><?php echo $display;?></h5>

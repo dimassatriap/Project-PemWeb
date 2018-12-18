@@ -40,8 +40,9 @@ $conn = new mysqli('localhost','root','', 'skedulindb');
 	
 	<div class="schedule">
         <div class="row">
-            <div class="profile-pic-container col-2 col-sm-1">
+            <div class="profile-pic-container col-2 col-sm-1 text-center">
                 <img class="profile-pic " src="<?php echo base_url() ?>assets/img/HomePage/Component%204.png" alt="" onclick="openHome()">
+                <a class="" href="<?php echo base_url('index.php/Home') ?>">Home</a>
             </div>
             <div class="name-container col-1">
               <h5><?php echo $display;?></h5>
