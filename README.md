@@ -24,4 +24,12 @@ Skedulin bertujuan agar proses pencocokan dan pembuatan jadwal ketemuan atau keg
 ### Target Pengguna ###
 Target Pengguna Skedulin adalah orang-orang yang lagi *hectic* dan *busy* kaya mahasiswa yang lagi mulai perkuliahan atau *middle aged worker*
 
+### How to Run in your localhost ###
+Dengan mengunakan xampp dan framework PHP: CodeIgniter, anda dapat menajalankan Skedulin pada localhost anda dengan cara: 
+  1. Buat database dengan nama "skedulindb" pada phpmyadmin
+  2. import "SkedulinDB.sql" pada database tersebut (file terdapat pada '...\Database\SkedulinDataBase\SkedulinDB.sql')
+  3. Copy folder "Skedulin" pada folder htdocs didalam Codeigniter anda
+  4. Atur dan sesuaikan kembali config database MySQL anda pada '...\Skedulin\application\config\database.php'
+  5. Jalankan web dengan 'localhost/Skedulin' pada browser anda
+
 #### Teknik Informatika 2017 - Universitas Padjadjaran ####
