@@ -1,7 +1,5 @@
 <?php 
- 
 class Login extends CI_Controller{
- 
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('m_login');
@@ -13,7 +11,13 @@ class Login extends CI_Controller{
 	function index(){	
 		$this->load->view('v_login');	
 	}
- 
+	function encrypt($data){
+        $post = $this->input->post();
+        $abc = $post["password"];
+        $encData = openssl_encrypt($data, 'DES-EDE3', $this->$abc, OPENSSL_RAW_DATA);
+        $encData = base64_encode($encData);
+        return $encData;
+    }
 	function aksi_login(){
 		
 		$this->form_validation->set_rules('name','Username','required');
@@ -34,12 +38,11 @@ class Login extends CI_Controller{
     	
 		$username = $this->input->post('name');
 		$password = $this->input->post('password');
+		$abc = $this->encrypt($password);
 		$query = "SELECT * FROM person WHERE Person_nama='$username'";
-
 		$where = array(
 			'Person_nama' => $username,
-			'password' => $password,
-		);
+			'password' =>$abc);
 
 		$cek = $this->m_login->cek_login("person",$where)->num_rows();
 			if($cek > 0){
@@ -75,6 +78,6 @@ class Login extends CI_Controller{
 			$this->session->sess_destroy();
 			redirect(base_url("index.php/login"));
 		}
-
+		    
 }
 ?>
