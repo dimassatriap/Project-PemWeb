@@ -1,11 +1,8 @@
-# Project-PemWeb
-Tugas Praktikum -Pemrograman Web
+Berikut adalah kontributor dalam project ini :
 
-Repository ini digunakan untuk memenuhi tugas praktikum dari mata kuliah Pemrograman Web. Berikut adalah nama-nama anggota dari Kelompok A8 yang berkontibusi dalam project ini :
-
-   * Risyad Pangestu - 140810170003 - [kazuzukan](https://github.com/kazuzukan)
-   * Dimas Satria Prakoso - 140810170007 - [dimassatriap](https://github.com/dimassatriap)
-   * Haris Putratama- 140810170059 - [hazelflith](https://github.com/hazelflith)
+   * Risyad Pangestu - [kazuzukan](https://github.com/kazuzukan)
+   * Dimas Satria Prakoso - [dimassatriap](https://github.com/dimassatriap)
+   * Haris Putratama - [hazelflith](https://github.com/hazelflith)
    
 ## Skedulin.id ##
 
